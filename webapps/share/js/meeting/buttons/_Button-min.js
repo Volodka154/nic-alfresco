@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/buttons/AlfButton","dojo/_base/lang"],function(a,b,c){return a([b],{additionalCssClasses:"call-to-action",})});

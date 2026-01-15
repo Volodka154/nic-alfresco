@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../dateTextBox/_TimeTextBox"],function(a,b){return a([b],{label:"Начало",name:"prop_btl-meeting_startDate",requirementConfig:{initialValue:false}})});

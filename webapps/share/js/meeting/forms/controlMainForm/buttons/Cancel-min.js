@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../buttons/_Button","dojo/_base/lang",],function(a,b,c){return a([b],{label:"Отмена",publishTopic:"CANCEL_MEETING_EVENT",publishGlobal:true})});

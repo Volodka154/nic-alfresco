@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/forms/controls/Select","./_validationMixin"],function(b,c,a){return b([c,a],{})});

@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Отправить по маршруту",publishTopic:"MEETING_SEND_ROUTE_EVENT",})});

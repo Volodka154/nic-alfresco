@@ -1,0 +1,16 @@
+.dijitTimePickerItemDisabled{
+    display: none;
+}
+
+.claro .control-row .dijitBorderContainer{
+    padding: 0px
+}
+._DateTimeTextBox .control-row{
+    height: 26px;
+}
+._DateTimeTextBox {
+    height: 52px;
+}
+.alfresco-forms-controls-BaseFormControl > .title-row{
+    height: 26px;
+}

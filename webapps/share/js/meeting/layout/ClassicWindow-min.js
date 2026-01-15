@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dijit/_TemplatedMixin","dojo/text!./templates/ClassicWindow.html","alfresco/layout/ClassicWindow","alfresco/forms/LayoutMixin"],function(b,e,d,c,a){return b([e,c,a],{templateString:d,type:"classic",})});

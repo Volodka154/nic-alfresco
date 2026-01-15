@@ -1,0 +1,63 @@
+<div class="dijitDialog" roleName="dialog" aria-labelledby="${uid}_title">
+
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${uid}_title"
+              roleName="heading" level="1"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon" data-dojo-attach-event="ondijitclick: onCancel" title="${buttonCancel}" roleName="button" tabindex="-1">
+			<span data-dojo-attach-point="closeText" class="closeText" title="${buttonCancel}">x</span>
+		</span>
+    </div>
+    <div data-dojo-attach-point="containerNode" class="dijitDialogPaneContent info-scan">
+        <div class='attachments-description form-field alf-textarea'>
+            <label for='${uid}_attachments_content'>Название документа:</label>
+            <br>
+            <input id='${uid}_name_content' disabled>
+        </div>
+        <div class="attachments-description">
+            <label for="${uid}_select-dpi">DPI:</label>
+            <br>
+            <select id="${uid}_select-dpi" disabled>
+
+            </select>
+            <br>
+            <br>
+            <label for="${uid}_select-color-mode">Цвет:</label>
+            <br>
+            <select id="${uid}_select-color-mode" disabled>
+
+            </select>
+            <br>
+            <br>
+            <label for="${uid}_select-format-list">Формат:</label>
+            <br>
+            <select id="${uid}_select-format-list" disabled>
+
+            </select>
+        </div>
+        <div class='attachments-description form-field alf-textarea'>
+            <label for='${uid}_attachments_content'>Описание документа:</label>
+            <textarea id='${uid}_attachments_content' style="max-width: 510px; max-height: 150px;" name='prop_btl-task_content' rows='5' cols='60' tabindex='0' disabled></textarea>
+        </div>
+        <div>
+            <input class="hide" id="hd-1" type="checkbox">
+            <label for="hd-1">Дополнительные настройки:</label>
+            <div >
+                <label  for="${uid}_input-port">Порт:</label>
+                <br>
+                <input id="${uid}_input-port" value="80">
+                <br>
+                <label  for="${uid}_input-ip">IP-адрес рабочей станции:</label>
+                <br>
+                <input id="${uid}_input-ip" value="">
+                <br>
+                <br>
+                <button type="button"  data-dojo-attach-event="ondijitclick: updatePort">Сохранить</button>
+            </div>
+            <br/>
+        </div>
+    </div>
+    <div class="dijitDialogPaneActionBar">
+        <button id="${uid}_attachments_dialog_load_btn" class="alfresco-buttons-AlfButton" style="font-size:13px ; cursor: pointer;"  data-dojo-attach-event="ondijitclick: fileUploadPress" type="button" disabled>Отсканировать и загрузить</button>
+        <button class="alfresco-buttons-AlfButton" style="font-size:13px ; cursor: pointer;"  data-dojo-attach-event="ondijitclick: onCancel" type="button">Отмена</button>
+    </div>
+</div>

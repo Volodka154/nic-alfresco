@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../dateTextBox/_DateTimeTextBox"],function(a,b){return a([b],{label:"Окончание",name:"prop_btl-meeting_endDate",requirementConfig:{initialValue:false}})});

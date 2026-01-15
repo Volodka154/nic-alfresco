@@ -1,0 +1,37 @@
+<div>
+    <style>
+        .claro .choiceButton .dijitButtonNode {
+            background-color: #efefef;
+            background-repeat: repeat-x;
+            background-image: -moz-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+            background-image: -webkit-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+            background-image: -o-linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+            background-image: linear-gradient(rgba(255, 255, 255, 0.7) 0%, rgba(255, 255, 255, 0) 100%);
+            _background-image: none;
+            border-color: #b5bcc7;
+            border-radius: 0px;
+        }
+        .claro .dijitButtonHover .choiceButton .dijitButtonNode{
+            background-color: #abd6ff;
+        }
+        .alfresco-forms-controls-BaseFormControl > .title-row{
+            height: 26px;
+        }
+    </style>
+
+    <span class="dijit dijitReset dijitInline choiceButton" roleName="presentation">
+    <span class="dijitReset dijitInline dijitButtonNode  " style="width: 18px; height: 18px;"
+          data-dojo-attach-event="ondijitclick:__onClick" roleName="presentation">
+        <span class="dijitReset dijitStretch dijitButtonContents"
+              data-dojo-attach-point="titleNode,focusNode"
+              roleName="button" aria-labelledby="${id}_label">
+        <span class="dijitReset dijitInline dijitIcon" data-dojo-attach-point="iconNode"></span>
+        <span class="dijitReset dijitToggleButtonIconChar">&#x25CF;</span>
+    </span>
+    </span>
+    </span>
+    <input ${!nameAttrSetting} type="${type}" value="${value}" class="dijitOffScreen"
+           data-dojo-attach-event="onclick:_onClick"
+           tabIndex="-1" aria-hidden="true" data-dojo-attach-point="valueNode"/>
+    </span>
+</div>

@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_DateTextBox_95","meeting/utils/base"],function(a,b,c){return a([b],{style:{width:"300px"},postMixInProperties:function(){if(!this.value&&this.storeId){var d=c.getStoreById(this.storeId);if(d.document){this.setValue(d.document.properties[this.name])}}this.inherited(arguments)},})});

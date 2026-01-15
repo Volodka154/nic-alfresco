@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../textBox/_TextBox"],function(a,b){return a([b],{name:"prop_btl-meeting_theme",label:"Тема",value:""})});

@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Выбрать переговорную",publishTopic:"BTL_CREATE_FORM_MEETINGS_SELECT_ROOMS"})});

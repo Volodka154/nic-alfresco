@@ -1,0 +1,339 @@
+<!-- Share configuration related to this particular Share module extension, such as:
+     - Doclib action config
+     - Form config
+     - Aspect and Type config
+
+    Note. Any configuration related to the whole Share.war webapp
+           (i.e. not specific to this share extension) should be
+            placed in the environment specific config:
+             alfresco-allinone/share/src/main/resources/alfresco/web-extension/share-config-custom.xml file
+     -->
+<alfresco-config>
+	<!-- Form customization for whitepaper -->
+
+	<config evaluator="model-type" condition="btl-project:projectDataType">
+		<forms>			
+			<form>
+				<view-form template="/ru/btl/fpi/components/form/project-edit-form.ftl" />
+       			<edit-form template="/ru/btl/fpi/components/form/project-edit-form.ftl" />
+    			<create-form template="/ru/btl/fpi/components/form/project-create-form.ftl" />
+				<field-visibility>
+					<!-- <show id="btl-project:systemNumber" /> -->
+					<show id="btl-project:state" />
+					<show id="btl-project:stage" />
+					<show id="btl-project:baseDocument" />					
+					<show id="btl-project:entryExaminationDate" />
+					<!-- <show id="btl-project:registrationNumber" /> -->
+					<show id="btl-project:directionDepartment" />
+					<show id="btl-project:projectManager" />					
+					<show id="btl-project:executionOrganization" />
+					<show id="btl-project:coexecutors" />
+					<show id="btl-project:shortName" />
+					<!-- <show id="btl-project:isPreliminaryDesign" /> -->
+					<show id="btl-project:fullName" />
+					<show id="btl-project:description" />
+					<show id="btl-project:startDate" />
+					<show id="btl-project:endDate" />										
+					<show id="btl-project:estimatedAmount" />
+					<show id="btl-project:actualAmount" />
+					<show id="btl-project:caseNumber" />
+					<show id="btl-project:projectType" />
+					<!-- <show id="btl-project:entryExaminationPassed" /> -->
+				</field-visibility>
+				<appearance>
+					<set id="main-set" appearance="fieldset" label="" />
+					<!-- <field id="btl-project:systemNumber" set="main-set" read-only="true" /> -->
+					<field id="btl-project:baseDocument" set="main-set" mandatory="true" >
+							
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>		
+							<control-param name="type">btl-incomming:documentDataType,btl-contract:contractTypeData</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>	
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>
+					    </control>
+                  
+					</field>
+					<field id="btl-project:state" set="main-set" help="" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:stage" set="main-set" help="" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:directionDepartment" set="main-set" mandatory="true" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>
+							<control-param name="dop">is_direction=true</control-param>
+						</control>
+					</field> 
+					<field id="btl-project:projectManager" set="main-set" mandatory="true" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="departField">assoc_btl-project_directionDepartment</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+       						<control-param name="s_field">btl-people:fio</control-param>
+						</control>
+					</field>
+					<set id="description-set" appearance="fieldset" label="" />
+					<field id="btl-project:shortName" set="description-set" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:95%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>	
+		            	</control>
+					</field>
+					<field id="btl-project:fullName" set="description-set" mandatory="true" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">5</control-param>
+							<control-param name="style">width:95% !important; padding: 6px 12px; border-radius: 4px;
+							</control-param>
+						</control>
+					</field>
+					<field id="btl-project:projectType" set="description-set" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:description" set="description-set" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+                  			<control-param name="rows">5</control-param>
+                  			<control-param name="style">width:95% !important; resize: none; padding: 6px 12px; border-radius: 4px;</control-param>	
+               			</control>
+					</field>
+					<field id="btl-project:startDate" set="description-set" mandatory="true" >
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:endDate" set="description-set" mandatory="true"  >
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:estimatedAmount" set="description-set" help="" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>
+					</field>
+					<field id="btl-project:actualAmount" set="description-set" help="" >
+					<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>
+					</field>
+					<set id="execution-set" appearance="fieldset" label="" />
+					<field id="btl-project:entryExaminationDate" set="execution-set" mandatory="true" >
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:caseNumber" set="execution-set" />
+					<field id="btl-project:executionOrganization" set="execution-set"  mandatory="true" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contractor_association.ftl">
+							<control-param name="style">width:155px; height:20px; padding: 6px 12px;</control-param>	
+						</control>
+						<!--<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl"/>	-->
+					</field>
+					<field id="btl-project:coexecutors" set="execution-set">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+						</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
+	<config evaluator="node-type" condition="btl-project:projectDataType">
+		<forms>			
+			<form>
+				<view-form template="/ru/btl/fpi/components/form/project-edit-form.ftl" />
+       			<edit-form template="/ru/btl/fpi/components/form/project-edit-form.ftl" />
+    			<create-form template="/ru/btl/fpi/components/form/project-create-form.ftl" />
+				<field-visibility>
+					<!-- <show id="btl-project:systemNumber" /> -->
+					<show id="btl-project:state" />
+					<show id="btl-project:stage" />
+					<show id="btl-project:baseDocument" />					
+					<show id="btl-project:entryExaminationDate" />
+					<!-- <show id="btl-project:registrationNumber" /> -->
+					<show id="btl-project:directionDepartment" />
+					<show id="btl-project:projectManager" />					
+					<show id="btl-project:executionOrganization" />
+					<show id="btl-project:coexecutors" />
+					<show id="btl-project:shortName" />
+					<!-- <show id="btl-project:isPreliminaryDesign" /> -->
+					<show id="btl-project:fullName" />
+					<show id="btl-project:description" />
+					<show id="btl-project:startDate" />
+					<show id="btl-project:endDate" />										
+					<show id="btl-project:estimatedAmount" />
+					<show id="btl-project:actualAmount" />
+					<show id="btl-project:caseNumber" />
+					<show id="btl-project:projectType" />
+					<!-- <show id="btl-project:entryExaminationPassed" /> -->
+					
+					<show id="btl-project:isTemplate" />
+				</field-visibility>
+				<appearance>
+					<set id="main-set" appearance="fieldset" label=""/>
+					<!-- <field id="btl-project:systemNumber" set="main-set" read-only="true" /> -->
+					<field id="btl-project:baseDocument" set="main-set" >
+							
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>		
+							<control-param name="type">btl-incomming:documentDataType,btl-contract:contractTypeData</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>			
+							
+						    <control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>  
+												       
+					    </control>					
+                  
+					</field>
+					<field id="btl-project:state" set="main-set" help="" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:stage" set="main-set" help="" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:directionDepartment" set="main-set" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+						    <control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="dop">is_direction=true</control-param>
+						</control>  
+					</field> 
+					<field id="btl-project:projectManager" set="main-set" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="departField">assoc_btl-project_directionDepartment</control-param>
+       						<control-param name="s_field">btl-people:fio</control-param>
+						    <control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>             			
+						</control>                  								
+					</field>
+					<set id="description-set" appearance="fieldset" label="" />
+					<field id="btl-project:shortName" set="description-set" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:95%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>	
+		            	</control>
+					</field>
+					<field id="btl-project:fullName" set="description-set" mandatory="true">
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">5</control-param>
+							<control-param name="style">width:95% !important; resize: none; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-project:projectType" set="description-set" >
+						<control>
+							<control-param name="style">width:260px; height: 32px; padding: 6px 12px; border-radius: 4px;</control-param>		
+						</control>
+					</field>
+					<field id="btl-project:description" set="description-set" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+                  			<control-param name="rows">5</control-param>
+                  			<control-param name="style">width:95% !important; resize: none; padding: 6px 12px; border-radius: 4px;</control-param>	
+               			</control>
+					</field>
+					<field id="btl-project:startDate" set="description-set">
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:endDate" set="description-set" >
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:estimatedAmount" set="description-set" help="" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>
+					</field>
+					<field id="btl-project:actualAmount" set="description-set" help="" >
+					<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>
+					</field>
+					<set id="execution-set" appearance="fieldset" label="" />
+					<field id="btl-project:entryExaminationDate" set="execution-set" >
+						<control>
+                  			<control-param name="showTime">false</control-param>
+                  		</control>
+					</field>
+					<field id="btl-project:caseNumber" set="execution-set" />
+					<field id="btl-project:executionOrganization" set="execution-set"  >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contractor_association.ftl">
+						    <control-param name="style">width:170px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>  
+						</control>
+						<!--<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl"/>-->
+					</field>
+					<field id="btl-project:coexecutors" set="execution-set" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+						
+						    <control-param name="style">width:190px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>  
+							</control>
+					</field>
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
+	<!-- <config evaluator="aspect-name" condition="countable">
+      <property-sheet>
+         <show-property name="btl-project:systemNumber" read-only="true" />
+      </property-sheet>
+   	</config> -->
+
+	<!-- End of Form customization for whitepaper -->   
+	<config evaluator="string-compare" condition="DocumentLibrary">
+ 		<types>
+        	<type name="cm:content">         
+          		<subtype name="btl-project:projectDataType" />            
+         	</type>
+         	<type name="btl-project:projectDataType"/>  
+      </types> 
+	</config>
+	
+	<!-- Add a custom page type -->
+   <config evaluator="string-compare" condition="SitePages">
+      <pages>         
+         <page id="my-projects">hdp/ws/my-projects</page>         
+      </pages>
+   </config>
+   
+   <config evaluator="string-compare" condition="activiti$projectEdit">
+        <forms>
+			<form>
+				
+    			<view-form template="/ru/btl/fpi/components/form/projectEditWF-form.ftl" />
+    			<edit-form template="/ru/btl/fpi/components/form/projectEditWF-form.ftl" />
+    			<create-form template="/ru/btl/fpi/components/form/projectEditWF-form.ftl" />
+				<field-visibility>
+					<show id="btl-projectwf:historyStage"/>
+					<show id="btl-projectwf:historyPrice"/>
+					<show id="btl-projectwf:historyStartDate"/>	
+					<show id="btl-projectwf:historyEndDate"/>
+					<show id="btl-projectwf:file"/>								
+					<show id="packageItems"/>
+				</field-visibility>
+				<appearance>
+					<field id="btl-projectwf:historyStage" help=""></field>
+					<field id="btl-projectwf:historyPrice" help=""></field>
+					<field id="btl-projectwf:historyStartDate"></field>
+					<field id="btl-projectwf:historyEndDate"></field>
+					<field id="btl-projectwf:file"></field>
+					<field id="packageItems"></field>
+				</appearance>
+			</form>
+		</forms>
+    </config>
+   
+</alfresco-config>

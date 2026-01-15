@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Зарегистрировать",publishTopic:"MEETING_TO_REGISTER_EVENT",})});

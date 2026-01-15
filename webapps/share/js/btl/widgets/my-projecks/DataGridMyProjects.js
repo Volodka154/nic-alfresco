@@ -1,0 +1,38 @@
+define(["dojo/_base/declare",
+        "btl/widgets/base/DataGrid",
+        "dojo/_base/lang"],
+        function(declare, DataGrid, lang) {
+   return declare([DataGrid], {
+	   
+	   Url: "search/projects",
+		
+		title: "",
+		
+		type: null,
+		
+	    colModel: [ { title: "nodeRef", width: 100, dataType: "string", dataIndx: "nodeRef", hidden: true },
+	                { title: "Системный номер", width: 100, dataType: "string", dataIndx: "systemNumber" },
+		            { title: "Краткое наименование", width: 100, dataType: "string", dataIndx: "shortName" },
+		            { title: "Руководитель проекта", width: 200, dataType: "string", dataIndx: "projectManager"},
+		            { title: "Исполнитель", width: 200, dataType: "string", dataIndx: "executionOrganization"},
+		            { title: "Регистрационный номер", width: 200, dataType: "string", dataIndx: "registrationNumber"},
+		            { title: "Полное наименование", width: 200, dataType: "string", dataIndx: "fullName"},
+		            { title: "Дата начала проекта", width: 200, dataType: "string", dataIndx: "startDate"},
+		            { title: "Дата окончания проекта", width: 200, dataType: "string", dataIndx: "endDate"},
+		            { title: "Ориентировочная сумма", width: 200, dataType: "string", dataIndx: "estimatedAmount"},
+		            { title: "Фактическая сумма", width: 200, dataType: "string", dataIndx: "actualAmount"}
+		            ],
+	    setEventsDataGrid: function alfresco_DataGrid__setEventsDataGrid(){
+	    	this.grid.pqGrid({
+	    	    rowDblClick: function( event, ui ) {
+	    	    	window.location.href = "/share/page/btl-edit-metadata?nodeRef="+ui.rowData.nodeRef;
+	    	    	 require(["dojo/topic"], function(topic){
+	                    	topic.publish("ALF_DISPLAY_NOTIFICATION", {  message: "Перенаправление на карточку проекта."});
+	    	    	 });
+	    	    }
+	    	});
+		},
+	    
+	     
+   });
+});

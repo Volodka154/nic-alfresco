@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.alfresco.aos-module</groupId>
+    <artifactId>alfresco-vti-bin</artifactId>
+    <version>1.1.6</version>
+    <name>Alfresco _vti_bin Web Application</name>
+    <packaging>war</packaging>
+
+    <url>http://www.alfresco.org/</url>
+    <inceptionYear>2015</inceptionYear>
+
+    <organization>
+        <name>Alfresco Software</name>
+        <url>http://www.alfresco.org/</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>Alfresco Component License Agreement</name>
+        </license>
+    </licenses>
+
+    <developers>
+        <developer>
+            <id>skopf</id>
+            <name>Stefan Kopf</name>
+            <email>stefan.kopf@alfresco.com</email>
+            <url>http://alfresco.org</url>
+            <organization>Alfresco Software</organization>
+            <organizationUrl>http://alfresco.org</organizationUrl>
+            <roles>
+                <role>Founder</role>
+                <role>Architect</role>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
+    
+    <contributors>
+        <contributor />
+    </contributors>
+
+    <properties>
+        <aoservices.version>3.1.3</aoservices.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <version.major>1</version.major>
+        <version.minor>0</version.minor>
+        <version.revision>0</version.revision>
+        <dependency.alfresco-sdk.version>2.1.0</dependency.alfresco-sdk.version>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.7</maven.compiler.source>
+    </properties>
+
+    <distributionManagement>
+        <repository>
+            <id>alfresco-internal</id>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/internal-releases</url>
+        </repository>
+        <snapshotRepository>
+            <id>alfresco-internal-snapshots</id>
+            <url>https://artifacts.alfresco.com/nexus/content/repositories/internal-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet.jsp</groupId>
+            <artifactId>jsp-api</artifactId>
+            <version>2.1</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.17</version>
+        </dependency>
+        <!-- aoservices -->
+        <dependency>
+            <groupId>org.alfresco.officeservices</groupId>
+            <artifactId>aoservices</artifactId>
+            <version>${aoservices.version}</version>
+        </dependency>
+    </dependencies>
+    
+    <repositories>
+        <repository>
+            <id>alfresco-internal</id>
+            <url>https://artifacts.alfresco.com/nexus/content/groups/internal</url>
+        </repository>
+    </repositories>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>2.6</version>
+                <configuration>
+                    <warName>_vti_bin</warName>
+                    <archiveClasses>true</archiveClasses>
+                    <attachClasses>true</attachClasses>
+                    <recompressZippedFiles>false</recompressZippedFiles>
+                    <archive>
+                        <manifest>
+                            <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                            <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                        </manifest>
+                        <manifestEntries>
+                            <Specification-Version>${version.major}.${version.minor}.${version.revision}</Specification-Version>
+                            <Implementation-Version>${project.version}</Implementation-Version>
+                            <Build-Date>${maven.build.timestamp}</Build-Date>
+                            <!--
+                            <Build-Name>${bamboo_planName}</Build-Name>
+                            <Build-Key>${bamboo_fullBuildKey}</Build-Key>
+                            <Build-Number>${bamboo_buildNumber}</Build-Number>
+                            <Build-Revision>${bamboo_repository_revision_number}</Build-Revision>
+                            -->
+                        </manifestEntries>
+                        <!--
+                        <manifestSections>
+                            <manifestSection>
+                                <name>Source-control</name>
+                                <manifestEntries>
+                                    <Last-change-Revision>${bamboo_custom_svn_lastchange_revision_number}</Last-change-Revision>
+                                    <Source-Revision>${bamboo_repository_revision_number}</Source-Revision>
+                                    <Source-Url>${bamboo_planRepository_repositoryUrl}</Source-Url>
+                                </manifestEntries>
+                            </manifestSection>
+                        </manifestSections>
+                        -->
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+        <finalName>_vti_bin</finalName>
+    </build>
+
+</project>

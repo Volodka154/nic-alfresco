@@ -1,0 +1,15 @@
+#content .alfresco-menus-AlfMenuBar .dijitMenuBar .dijitMenuItem{
+    max-width: 300px;
+}
+#content .alfresco-menus-AlfMenuBar .dijitMenuBar .dijitMenuItem {
+    cursor: pointer;
+    color: rgb(13, 136, 255);
+    font-style: italic;
+}
+#content .alfresco-menus-AlfMenuBar .dijitMenuBar .dijitMenuItemHover {
+    background-color: #fff;
+    color: rgb(255, 118, 13);
+}
+#content .alfresco-menus-AlfMenuBar .dijitMenuBar .dijitMenuItemSelected {
+    background-color: #fff;
+}

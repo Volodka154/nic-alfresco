@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_BaseUploadService","alfresco/services/UploadService",],function(b,c,a){return b([c,a],{})});

@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","meeting/buttons/_Button","meeting/utils/base"],function(b,a,c){return b([a],{label:"Печать",onClick:function(){var e=c.getStoreById("MEETING_STORE");var f=/&/gi;var d=window.location.toString().replace(f,"%26");window.location.assign(Alfresco.constants.URL_PAGECONTEXT+"negotiation-list?documentNodeRef="+e.nodeRef+"&redirect="+d)}})});

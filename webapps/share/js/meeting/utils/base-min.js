@@ -1,0 +1,1 @@
+define(["dijit/registry"],function(a){return{getFormValuesById:function(c){var b=a.byId(c);return(b)?b.getValue():null},getFormWidgetByNode:function(b){return a.findWidgets(b)},editURL:function(b){window.history.replaceState({},null,b)},getStoreById:function(b){return a.byId(b).store},getById:function(b){return a.byId(b)}}});

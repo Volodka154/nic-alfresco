@@ -1,0 +1,54 @@
+<div class="alfresco-forms-controls-BaseFormControl wipe" data-dojo-attach-point="containerNode">
+    <link rel="stylesheet" type="text/css" href="/share/res/extension/components/btl/windowChoiceItem/css/window_choice_item.css" />
+    <link rel="stylesheet" type="text/css" href="/share/res/extension/components/form/meetingMain.css" />
+    <style>
+        ul.control-list  {
+            list-style-type: none;
+            margin-left: 0;
+            background: #dcf5ff;
+            padding: 5px;
+            width: ${style.width};
+            margin-top: 1px;
+            position: absolute;
+            border: 1px solid #d3d3d3;
+            border-radius: 4px 4px 4px 4px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+        ul.control-list li{
+            max-height: 32px;
+            padding-top: 5px;
+            overflow: hidden;
+            border-bottom: dashed #cecece 1px;
+        }
+        ul.control-list .selected{
+            background: #2964f6;
+            max-height: 32px;
+            color: #ffffff;
+            cursor: pointer;
+            padding-top: 5px;
+        }
+    </style>
+    <div data-dojo-attach-point="_titleRowNode" class="title-row">
+        <img class="validationInProgress hidden" src="${validationInProgressImgSrc}"
+             alt="${validationInProgressAltText}" data-dojo-attach-point="_validationInProgressIndicator">
+        <img class="alfresco-forms-controls-BaseFormControl__validation-error" src="${validationErrorImgSrc}"
+             alt="${validationErrorAltText}" data-dojo-attach-point="_validationErrorIndicator">
+        <img class="inlineHelp hidden" src="${inlineHelpImgSrc}" alt="${inlineHelpAltText}"
+             data-dojo-attach-point="_inlineHelpIndicator" data-dojo-attach-event="ondijitclick:showInlineHelp">
+        <label class="label" data-dojo-attach-point="_labelNode"></label>
+        <span class="requirementIndicator" data-dojo-attach-point="_requirementIndicator">*</span>
+        <span class="validation-message" data-dojo-attach-point="_validationMessage"></span>
+    </div>
+    <div class="control-row">
+        <div class="control" data-dojo-attach-point="_controlNode"></div>
+        <div>
+            <ul class="control control-list" data-dojo-attach-point="_listValue" style="display: none"></ul>
+        </div>
+        <span class="units" data-dojo-attach-point="_unitsNode"></span>
+    </div>
+    <div data-dojo-attach-point="_descriptionRowNode" class="description-row">
+        <div class="description" data-dojo-attach-point="_descriptionNode"></div>
+    </div>
+    <div class="clear-both"></div>
+</div>

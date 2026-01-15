@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dijit/_WidgetBase","dijit/_Container","dijit/_TemplatedMixin","dojo/dom-construct","dojo/text!./templates/MenuBar.html",],function(d,c,b,f,a,e){return d([c,f,b],{templateString:e,postCreate:function(){var g=this.domNode;this.addButtons()},addButtons:function(){},})});

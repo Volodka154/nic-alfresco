@@ -1,0 +1,124 @@
+.icon-preview {
+    background-image: url('../icons/Preview_for_investments_widget.png');
+    background-repeat: no-repeat;
+}
+
+.icon-add {
+    background-image: url('../icons/add.png');
+}
+
+.icon-check-list {
+    background-image: url('../icons/icon-check-list.png');
+    background-repeat: no-repeat;
+}
+
+.icon-add-new-version {
+    background-image: url('../icons/add_new_version.png');
+}
+
+.icon-edit-for-attach {
+    background-image: url('../icons/edit_for_attach.png');
+}
+
+.icon-delete {
+    background-image: url('../icons/delete.png');
+}
+
+.icon-edit {
+    background-image: url('../icons/edit.png');
+}
+
+.icon-visible {
+    background-image: url('../icons/icon-visible.png');
+}
+
+.icon-not-visible {
+    background-image: url('../icons/icon-not-visible.png');
+}
+
+.icon-on-check {
+    background-image: url('../icons/on-check.png');
+}
+
+.icon-off-check {
+    background-image: url('../icons/off-check.png');
+}
+
+.icon-sign {
+    background-image: url('../icons/sign-32.png');
+}
+
+.icon-refresh {
+    background-image: url('../icons/refresh.png');
+}
+
+.icon-is-sing {
+    background-image: url('../icons/isSign.png');
+}
+
+.cancel-edit {
+    background-image: url('/share/res/components/documentlibrary/actions/document-cancel-editing-16.png');
+}
+
+
+.btl-icon-16 {
+    margin-right: 5px;
+    margin-top: 2px;
+}
+.btl-icon-16, .btl-icon-16_2 {
+    width: 16px;
+    height: 16px;
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    float: left;
+    background-size: 100%;
+    cursor: auto;
+}
+
+.btl-icon-32 {
+    width: 32px;
+    height: 32px;
+    display: block;
+    text-indent: -99999px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    float: left;
+    margin-right: 5px;
+    background-size: 100%;
+    cursor: auto;
+}
+
+.button-icon {
+    padding-left: 25px;
+    margin: 3px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    cursor: pointer;
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+
+.button-icon-flex {
+    display: flex;
+    padding: 3px;
+    background-color: white;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+    width: 16px;
+    height: 16px;
+}
+
+
+.button-icon:hover, .button-icon-flex:hover {
+    border-color: #759DC0;
+    border-width: 1px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

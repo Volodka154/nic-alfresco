@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","meeting/forms/_DynamicForm"],function(b,a){return b([a],{postCreate:function(){this.widgets=[{name:"meeting/module/tasks",config:{storeId:this.storeId,gridId:this.uidGrid}},];this.inherited(arguments)},})});

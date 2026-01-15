@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Implementation-Title: Alfresco Repository WAR Community
+Build-Date: 2017-07-13T11:55:42Z
+Build-Number: 22
+Implementation-Version: 5.2.g
+Archiver-Version: Plexus Archiver
+Built-By: build
+Specification-Vendor: Alfresco Software
+Specification-Title: Alfresco Repository WAR Community
+Implementation-Vendor-Id: org.alfresco
+Build-Key: ALF-CREPO4-JOB1-22
+Implementation-Vendor: Alfresco Software
+Build-Revision: e21f2be5
+Build-Name: "Alfresco - Community 5.2 Platform - 5.2.g
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://www.alfresco.org/alfresco-parent/projects/a
+ lfresco-platform/
+Specification-Version: 5.2.0
+
+Name: Source-control
+Source-Url: git@git.alfresco.com:Repository/repo.git
+Source-Revision: e21f2be5
+Last-change-Revision: e21f2be5
+

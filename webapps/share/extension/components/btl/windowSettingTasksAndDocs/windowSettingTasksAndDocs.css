@@ -1,0 +1,43 @@
+.sortable-task-and-docs {
+    width: 500px;
+    margin: 0 40px;
+    padding: 10px;
+    float: left;
+}
+.sortable-task-and-docs-head{
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    color: #333;
+    padding: 10px;
+}
+
+.sortable-task-and-docs-head span:first-child{
+    width: 270px;
+    display: inline-block;
+}
+
+.sortable-task-and-docs-head-submenu{
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    color: #333;
+    padding: 10px;
+}
+
+.item-block{
+    display: inline-block;
+    width: 250px;
+}
+
+.item-input{
+    display: inline-block;
+    width: 200px;
+}
+
+.sortable-task-and-docs-item{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px 20px;
+    cursor: move;
+}

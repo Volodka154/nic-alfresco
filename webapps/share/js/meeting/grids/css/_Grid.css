@@ -1,0 +1,65 @@
+.delete-btn-icon{
+    width: 19px;
+    height: 19px;
+    padding-left: 15px!important;
+    padding-top: 2px!important;
+    cursor: pointer;
+    background: url(/share/res/js/lib/dojo-1.10.4/dijit/icons/images/commonIconsObjActEnabled.png) -80px 0px no-repeat;
+}
+.delete-btn{
+    width: 25px;
+    height: 23px;
+    margin: auto;
+}
+.delete-btn:hover{
+    background-color: #abd6ff;
+}
+
+
+.checkbox {
+    width: 19px;
+    position: relative;
+    margin: auto !important;
+}
+.checkbox label {
+    width: 19px;
+    height: 19px;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: #fcfff4;
+    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+    border-radius: 4px;
+    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0, 0, 0, 0.5);
+}
+.checkbox label:after {
+     content: '';
+     width: 9px;
+     height: 5px;
+     position: absolute;
+     top: 4px;
+     left: 4px;
+     border: 3px solid #333;
+     border-top: none;
+     border-right: none;
+     background: transparent;
+     opacity: 0;
+     transform: rotate(-45deg);
+ }
+.checkbox label:hover::after {
+     opacity: 0;
+ }
+.checkbox input[type=checkbox][disabled] + label:after{
+    opacity: 0.15;
+}
+.checkbox input[type=checkbox][disabled]{
+    background: #e2e2e2;
+}
+input[type=checkbox] .checkbox {
+    visibility: hidden;
+}
+.checkbox input[type=checkbox]:checked + label:after {
+     opacity: 1;
+ }
+

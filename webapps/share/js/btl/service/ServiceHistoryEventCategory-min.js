@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/core/Core","dojo/_base/lang","alfresco/core/CoreXhr","service/constants/Default"],function(b,e,d,c,f){return b([e,c],{newhistoryEventCategory:{},constructor:function a(g){d.mixin(this,g)}})});

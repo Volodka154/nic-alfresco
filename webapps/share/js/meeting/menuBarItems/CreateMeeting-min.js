@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Создать",publishTopic:"CREATE_MEETING_EVENT",})});

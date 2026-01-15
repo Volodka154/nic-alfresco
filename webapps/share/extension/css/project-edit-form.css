@@ -1,0 +1,86 @@
+.add_next_task_btn{
+	background: url(/share/res/extension/icons/next1.png) no-repeat center ;	
+	display:block;
+	height: 100%;   
+    width: 32px;
+    cursor:default;   
+    opacity: .3;      
+}
+
+
+
+.add_next_task_btn:hover {
+    opacity: initial;
+}
+
+
+.add_move_task_btn{
+	background: url(/share/res/extension/icons/move.png) no-repeat center ;	
+	display:block;
+	height: 100%;   
+    width: 32px;
+    cursor:default;   
+    opacity: .3;      
+}
+
+.add_move_task_btn:hover {
+    opacity: initial;
+}
+
+.add_child_task_btn{
+	background: url(/share/res/extension/icons/child1.png) no-repeat center ;	
+	display:block;
+	height: 100%;  
+    width: 32px;
+    cursor:default;     
+    opacity: .3;  
+}
+
+.add_child_task_btn:hover {
+    opacity: initial;
+}
+
+.visible_none{
+    display:none;
+}
+
+.delete_task_btn{
+	background: url(/share/res/extension/icons/delete_16.png) no-repeat center;	
+	display:block;
+    height: 100%;     
+    width: 32px;
+    cursor:default;   
+    opacity: .3;     
+}
+.delete_task_btn:hover{
+	opacity: initial;      
+}
+
+.delete_task_btn:hover {
+    
+}
+
+.editdateButton{
+	color: #000000;
+	padding-left: 3px;
+	cursor:default;
+	opacity: .5; 
+}
+.editdateButton:hover{
+	opacity: initial;   
+	color: #ffa011;   
+}
+
+.prolectTaskTabOut{	
+	width: 96vw;
+    background-color: #f2f2f2;
+    padding: 5px;
+    padding-bottom: 10px;
+    margin-bottom: -4px;
+    border: 1px solid grey;
+}
+.prolectTaskTabInner{	
+	width: 100%;
+    background-color: white;
+    border: 1px solid #cecece;
+}

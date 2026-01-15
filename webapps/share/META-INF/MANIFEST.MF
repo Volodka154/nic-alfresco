@@ -1,0 +1,37 @@
+Manifest-Version: 1.0
+Implementation-Title: Alfresco Share WAR
+Build-Date: 2017-07-13T15:26:51Z
+Build-Number: 22
+Implementation-Version: 5.2.f
+Archiver-Version: Plexus Archiver
+Built-By: bamboo
+Specification-Vendor: Alfresco Software
+Specification-Title: Alfresco Share WAR
+Implementation-Vendor-Id: org.alfresco
+Build-Key: ALF-CSHARE15-JOB1-22
+Implementation-Vendor: Alfresco Software
+Build-Revision: 137983
+Build-Name: Alfresco - Share 5.1∕5.2 - 5.2.f
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_112
+Implementation-URL: http://www.alfresco.org/alfresco-share-parent/shar
+ e/
+Specification-Version: 5.2.0
+
+Name: Share Libraries
+surf: 5.2.f
+spring: 3.2.14.RELEASE
+freemarker: 2.3.20-alfresco-patched
+rhino: 1.7R4-alfresco-patched
+alfresco-core: 6.13
+alfresco-jlan: 6.2
+yui: 2.9.0-alfresco-20141223
+webscripts: 6.15
+aikau: 1.0.101.10
+
+Name: Source-control
+Source-Url: https://svn.alfresco.com/repos/alfresco-enterprise/web-app
+ s/Share/tags/5.2.f
+Source-Revision: 137983
+Last-change-Revision: 137983
+

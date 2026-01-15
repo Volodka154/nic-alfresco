@@ -1,0 +1,21 @@
+<div class="dijitReset dijitInline dijitButtonNode" roleName="menuitem" tabIndex="-1" style="margin: 2px">
+    <style>
+        .simple-link {
+            background-position: 4px 1px;
+            background-repeat: no-repeat;
+            border: 1px solid transparent;
+            display: block;
+            height: 16px;
+            padding: 0 0 2px 24px;
+        }
+    </style>
+    <span class="dijitReset dijitInline simple-link" style="background-image: url(${iconUrl})"
+          data-dojo-attach-event="ondijitclick:onClick" roleName="presentation">
+        <span class="dijitReset dijitStretch dijitButtonContents "
+              data-dojo-attach-point="titleNode,focusNode"
+              roleName="button" aria-labelledby="${id}_label">
+
+            <span data-dojo-attach-point="containerNode,textDirNode"></span>
+        </span>
+    </span>
+</div>

@@ -1,0 +1,415 @@
+.parentDocumentLink{
+	cursor: pointer;
+	color: rgb(13, 136, 255);
+	font-style: italic;
+}
+.weekend{ background: #f4f7f4 !important;}
+
+.leftLabel{}
+.leftLabel  label
+{
+	float: left;
+	text-align: right;
+	margin-right: 1em;
+	margin-top: 0.4em;
+}
+.share-form .form-container .form-fields,  .form-container .form-fields
+{
+	border: 1px solid #ccc !important;
+	background-color: #fff;
+	display: inline-block;
+	width: 1050px;
+}
+
+
+
+.yui-content {
+	padding: 0px !important;
+	border: 0px !important;
+}
+.yui-skin-gdocs .yui-navset .yui-nav, .yui-skin-gdocs .yui-navset .yui-navset-top .yui-nav{
+	border: 0px !important;
+}
+
+.yui-skin-gdocs .yui-navset .yui-nav .selected a, .yui-skin-gdocs .yui-navset .yui-nav .selected a:focus, .yui-skin-gdocs .yui-navset .yui-nav .selected a:hover {
+	background: #f2f2f2;
+	color: black;
+	border-color: #767676;
+}
+
+.yui-skin-gdocs .yui-navset .yui-nav a, .yui-skin-gdocs .yui-navset .yui-navset-top .yui-nav a{
+	background: #ffffff;
+}
+
+.form-container .form-field, .form-fields .form-field {
+	margin: 0px !important;
+}
+
+
+
+.panel-heading {
+	min-height: 16px;
+	padding: 5px 5px;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	cursor: default;
+}
+
+.panel-body {
+	padding: 15px;
+}
+.panel-body-info{
+
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+.form-container fieldset {
+	border: 1px solid #aaaaaa;
+	padding: 1.2em 0 0.5em 1.5em;
+	margin-bottom: 1em;
+}
+
+.panel {
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: #fff;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	box-shadow: 0 1px 1px rgba(0,0,0,.05);
+	margin-bottom: 20px;
+}
+
+.panel-default {
+	border-color: #ddd;
+}
+.panel-primary {
+	border-color: #337ab7;
+}
+.panel-success {
+	border-color: #d6e9c6;
+}
+.panel-info {
+	border-color: #bce8f1;
+}
+
+.panel-default>.panel-heading {
+	color: #333;
+	background-color: #f5f5f5;
+	border-color: #ddd;
+}
+
+.panel-primary>.panel-heading {
+	color: #fff;
+	background-color: #337ab7;
+	border-color: #337ab7;
+}
+.panel-success>.panel-heading {
+	color: #3c763d;
+	background-color: #dff0d8;
+	border-color: #d6e9c6;
+}
+.panel-info>.panel-heading {
+	color: #31708f;
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+}
+
+.rigthblock, .leftblock, .block660, .block300, .leftBlock{
+	float:left;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+.floatleftdiv
+{
+	float: left;
+	width: 31%;
+	padding-left: 12px;
+}
+
+.floatleftdiv187
+{
+	float: left;
+	width: 187px;
+	padding-left: 12px;
+}
+
+.floatdoubleleftdiv
+{
+	float:left;
+	width: 62%;
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+
+.block660{
+	width: 660px;
+}
+
+.block300{
+	width: 300px;
+
+}
+
+.rigthblock{
+	width: 63.66666667%;
+}
+
+.leftblock{
+	width: 30.33333333%;
+
+}
+
+
+.row {
+	margin-right: -15px;
+	margin-left: -15px;
+}
+.row, .rowNoMargin, .rowOriginal {
+	display: inline-block;
+	width: 100%;
+}
+
+
+.yui-skin-lightTheme .yui-navset .yui-nav a, .yui-skin-lightTheme .yui-navset .yui-navset-top .yui-nav a {
+	background-color: rgba(216, 216, 216, 0);
+	border: solid #ccc;
+	border-width: 0 1px;
+	color: #000;
+	position: relative;
+	text-decoration: none;
+}
+
+.form-container .datepicker-icon {
+	vertical-align: -0.7em;
+	margin: 0 0.4em;
+	height: 28px;
+}
+
+.form-container input.date-entry {
+	width: 6em;
+	height: 20px;
+	margin-bottom: 0.1em;
+	border-radius: 4px;
+	padding: 6px 12px;
+}
+.form-container input.time-entry {
+	width: 3em;
+	margin-bottom: 0.1em;
+	border-radius: 4px;
+	padding: 6px 12px;
+	height: 20px;
+}
+
+.modal-window-shadowDiv{
+	display: none;
+	position: fixed;
+	z-index: 101;
+
+	width: 100%;
+	height: 100%;
+	background-color: rgba(90, 93, 96, 0.4);
+	left: 0px;
+	top: 0px;
+}
+.modal-window-shadowDiv-document{
+	display: none;
+	position: fixed;
+	z-index: 101;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(90, 93, 96, 0.4);;
+	left: 0px;
+	top: 0px;
+	padding-top: 30px;
+	padding-left: 100px;
+}
+
+.modalFon-document{
+	width: 35%;
+	background-color: white;
+	padding: 10px;
+	border-radius: 4px;
+}
+/*
+   td {
+    border-top: 0;
+	border-bottom: 1px solid #ddd;
+	padding-right: 8px;
+	padding-left: 8px;
+   }
+
+ */
+
+th {
+	border-top: 0;
+	border-bottom: 2px solid #ddd;
+	padding: 8px;
+}
+
+.buttonAction{
+	cursor: pointer;
+	font-style: italic;
+	border-radius: 4px;
+	border: 1px solid;
+	padding: 5px 10px;
+	box-shadow: 0.33px 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buttonCancel{
+	cursor: pointer;
+	background-color: white;
+	padding: 0 10px;
+	min-height: 2em;
+	min-width: 91px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	margin-left: 11px;
+}
+
+.btl_button{
+	cursor: pointer;
+	background-color: white;
+	padding: 0 10px;
+	min-height: 2em;
+	min-width: 91px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+	margin-right: 11px;
+}
+
+.buttonCancelNoMargin{
+	cursor: pointer;
+	background-color: white;
+	padding: 0 10px;
+	min-height: 2em;
+	min-width: 91px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #ccc;
+}
+
+.share-form .form-container {
+	padding: 15px;
+	margin-top: 0;
+}
+.halfblock{
+	width: 47%;
+	float:left;
+	padding-left: 15px;
+}
+
+.editRegNumber{
+	display: inline-block;
+
+	float: left;
+	margin-left: 35px;
+	margin-top: 22px;
+
+	border: 0px ;
+
+	height: 20px;
+	width: 20px;
+	background-color: white;
+	background-size: 100%;
+	background-image:url(/share/res/components/form/img/editRegNumber.png);
+	opacity: .3;
+}
+.editRegNumber:hover{
+	opacity: 1;
+}
+
+.taskActionFon{
+	width: 500px;
+	float: right;
+}
+.taskActionSubmit{
+	margin-top: 10px;
+	margin-left: 20px;
+}
+.fileItem{
+
+	background-color:white;
+}
+.fileItem:hover{
+
+	background-color:#d8e8fa;
+}
+.filetreecontrol{
+	opacity: .3;
+	padding: 5px;
+
+}
+.filetreecontrol:hover{
+	opacity: 1;
+}
+.docActionButton{
+	cursor: default;
+	color: rgb(13, 136, 255);
+	font-style: italic;
+
+}
+
+.docActionButtonDisabled{
+	cursor: default;
+	color: #ccc;
+	font-style: italic;
+
+}
+
+.docActionButton:hover{
+	color: rgb(255, 118, 13);
+}
+.docActionButtonDiv{
+	float:left;
+	padding-right: 50px;
+}
+
+.modal-window-shadowDiv2{
+	display: none;
+	position: fixed;
+	z-index: 1;
+}
+.sticky-footer, .sticky-push {
+	height: 0px;
+}
+
+#share-header {
+	min-height: 0px;
+}
+
+.add_button {
+	background: url(/share/res/extension/icons/child1.png) no-repeat center;
+	display: block;
+	height: 100%;
+	width: 32px;
+	cursor: default;
+	opacity: .3;
+	height: 32px;
+	border: 1px solid #acacac;
+	border-radius: 4px;
+}
+.add_button:hover {
+	opacity: 1;
+}
+
+.edit_button {
+	background: url(/share/res/components/form/img/editRegNumber.png) no-repeat center;
+	display: block;
+	height: 100%;
+	width: 32px;
+	cursor: default;
+	opacity: .3;
+	height: 32px;
+	border: 1px solid #acacac;
+	border-radius: 4px;
+}
+.edit_button:hover {
+	opacity: 1;
+}

@@ -1,0 +1,11 @@
+<#escape x as jsonUtils.encodeJSONString(x)>
+	{
+		"status" : "${data.status}",
+		"message": "${data.message}",
+		"employeeNoFam":[
+			<#list employeeNoFam as item>
+				"${item}"<#if item_has_next>,</#if>
+		    </#list>
+		]
+	 }
+</#escape>

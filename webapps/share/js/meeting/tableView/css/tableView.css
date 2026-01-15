@@ -1,0 +1,12 @@
+thead.tableView th {
+    border-top: 0;
+    border-bottom: 2px solid #ddd;
+    padding: 8px;
+    font-weight: bold;
+}
+tbody.tableView td {
+    border-top: 0;
+    border-bottom: 1px solid #ddd;
+    padding-right: 8px;
+    padding-left: 8px;
+}

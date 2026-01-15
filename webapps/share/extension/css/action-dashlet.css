@@ -1,0 +1,176 @@
+.icons-area{
+	overflow: hidden;
+}
+
+.add_project_btn{
+	background: url(/share/res/extension/icons/project_bw_88.png) no-repeat center #fff;	
+	display:block;
+    height: 100px;    
+    width: 88px;
+    cursor:pointer;   
+    float: left;    
+}
+
+.add_project_btn:hover {
+    background: url(/share/res/extension/icons/project_88.png) no-repeat center #fff;
+}
+
+.add_task_btn{
+	background: url(/share/res/extension/icons/task_bw_88.png) no-repeat center #fff;
+	display:block; 	   
+    height: 100px;    
+    width: 88px; 
+    cursor:pointer; 
+    float: left;        
+}
+
+.add_task_btn:hover {
+    background: url(/share/res/extension/icons/task_88.png) no-repeat center #fff;
+}
+
+.add_incoming_doc_btn{
+	background: url(/share/res/extension/icons/incoming_bw_88.png) no-repeat center #fff;	
+	display:block; 
+	height: 100px;    
+    width: 88px;  
+	cursor:pointer;
+	float: left;
+}
+
+.add_incoming_doc_btn:hover {
+    background: url(/share/res/extension/icons/incoming_88.png) no-repeat center #fff;
+}
+
+.add_outgoing_doc_btn{
+	background: url(/share/res/extension/icons/outgoing_bw_88.png) no-repeat center #fff;	
+	display:block;		 
+    height: 100px;    
+    width: 88px;
+    cursor:pointer;
+    float: left;
+}
+
+.add_outgoing_doc_btn:hover {
+    background: url(/share/res/extension/icons/outgoing_88.png) no-repeat center #fff;
+}
+
+.add_internal_doc_btn{
+	background: url(/share/res/extension/icons/internal_bw_88.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;  
+    float: left;   
+}
+
+.add_internal_doc_btn:hover {
+    background: url(/share/res/extension/icons/internal_88.png) no-repeat center #fff;
+}
+
+.add_application_doc_btn{
+	background: url(/share/res/extension/icons/application_bw_88.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;  
+    float: left;   
+}
+
+.add_application_doc_btn:hover {
+    background: url(/share/res/extension/icons/application_88.png) no-repeat center #fff;
+}
+
+.meetings_btn{
+	background: url(/share/res/extension/icons/meetings_bw_88.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;
+    float: left;   
+}
+
+.meetings_btn:hover {
+    background: url(/share/res/extension/icons/meetings_88.png) no-repeat center #fff;
+}
+
+.search_registry_btn{
+	background: url(/share/res/extension/icons/journals_bw_115.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;
+    cursor:pointer;  
+    float: left;   
+}
+
+.search_registry_btn:hover {
+    background: url(/share/res/extension/icons/journals_115.png) no-repeat center #fff;
+}
+
+.calendar_btn{
+	background: url(/share/res/extension/icons/calendar_bw_88.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;
+    float: left;     
+}
+
+.calendar_btn:hover {
+    background: url(/share/res/extension/icons/calendar_88.png) no-repeat center #fff;
+}
+
+.calculator_btn{
+	background: url(/share/res/extension/icons/calculator88_bw.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;
+    float: left;     
+}
+
+.calculator_btn:hover {
+    background: url(/share/res/extension/icons/calculator88.png) no-repeat center #fff;
+}
+.arm_btn{
+	background: url(/share/res/extension/icons/arm_bw.png) no-repeat center #fff;	
+	display:block; 
+    height: 100px;    
+    width: 88px;   
+    cursor:pointer;
+    float: left;     
+}
+
+.arm_btn:hover {
+    background: url(/share/res/extension/icons/arm.png) no-repeat center #fff;
+}
+
+
+
+
+.add_mail_btn{
+	background: url(/share/res/extension/icons/mails.png) no-repeat center #fff;
+    display:block;
+    height: 100px;  
+    width: 88px;
+    cursor:pointer;
+    float: left;
+}
+
+.add_mail_btn:hover {
+    background: url(/share/res/extension/icons/mails_hover.png) no-repeat center #fff;
+}
+
+
+
+.overdue_btn{
+    background: url(/share/res/extension/icons/overdue.png) no-repeat center #fff;
+    display:block;
+    height: 100px;
+    width: 88px;
+    cursor:pointer;
+    float: left;
+}
+
+.overdue_btn:hover {
+    background: url(/share/res/extension/icons/overdue-hover.png) no-repeat center #fff;
+}

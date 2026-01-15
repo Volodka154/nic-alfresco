@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE beans PUBLIC '-//SPRING//DTD BEAN//EN' 'http://www.springframework.org/dtd/spring-beans.dtd'>
+
+<beans>
+
+
+    <bean id="rolePermissionService" class="ru.btlab.isid.nicetu.service.RolePermissionServiceExt" init-method="init">
+        <property name="permissionDataBase" ref="fpiPermissionDataBase"/>
+        <property name="permissionService" ref="permissionService"/>
+        <property name="nodeService" ref="nodeService"/>
+        <property name="alfrescoDataBase" ref="fpiAlfrescoDataBase"/>
+        <property name="roleRegisterService" ref="roleRegisterService"/>
+    </bean>
+
+    <bean id="isidObjectFactory" class="ru.btlab.isid.nicetu.service.IsidObjectFactoryExt" >
+        <property name="nodeService" ref="nodeService"/>
+    </bean>
+
+    <bean id="roleService" class="ru.btlab.isid.nicetu.service.role.RoleServiceExt" init-method="init">
+        <property name="rolesDataBase" ref="fpiRolesDataBase"/>
+        <property name="rolePermissionService" ref="rolePermissionService"/>
+        <property name="assocRegisterService" ref="assocRegisterService"/>
+        <property name="roleRegisterService" ref="roleRegisterService"/>
+    </bean>
+
+</beans>

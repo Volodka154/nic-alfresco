@@ -1,0 +1,23 @@
+<div class="dijitDialog" roleName="dialog" aria-labelledby="title">
+    <div data-dojo-attach-point="titleBar" class="dijitDialogTitleBar">
+		<span data-dojo-attach-point="titleNode" class="dijitDialogTitle" id="${id}_title"
+              roleName="heading" level="1"></span>
+        <span data-dojo-attach-point="closeButtonNode" class="dijitDialogCloseIcon"
+              data-dojo-attach-event="ondijitclick: onCancel" title="${buttonCancel}" roleName="button" tabindex="-1">
+			<span data-dojo-attach-point="closeText" class="closeText" title="${buttonCancel}">x</span>
+		</span>
+    </div>
+
+    <div style="height: 80px; text-align: center;  background-color: white;">
+        <div data-dojo-attach-point="containerNode" style="padding-top: 20px;" class="dijitDialogPaneContent">
+    </div>
+    </div>
+    <div class="dijitDialogPaneActionBar">
+        <button class="alfresco-buttons-AlfButton" style="font-size:13px ; cursor: pointer;"
+                data-dojo-attach-event="ondijitclick: onSubmit" type="button">Да
+        </button>
+        <button class="alfresco-buttons-AlfButton" style="font-size:13px ; cursor: pointer;"
+                data-dojo-attach-event="ondijitclick: onCancel" type="button">Отмена
+        </button>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+<webscript>
+   <shortname>Действия</shortname>
+   <description>Actions Dashlet</description>
+   <family>dashlet</family>
+   <url>/components/dashlets/fpi/actions-dashlet</url>
+</webscript>

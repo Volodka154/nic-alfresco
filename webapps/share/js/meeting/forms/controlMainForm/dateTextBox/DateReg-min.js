@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../dateTextBox/_DateTextBox"],function(a,b){return a([b],{label:"Дата регистрации",name:"prop_btl-meeting_regDate",disablementConfig:{initialValue:true}})});

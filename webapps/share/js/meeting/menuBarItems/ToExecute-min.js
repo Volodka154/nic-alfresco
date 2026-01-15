@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"На исполнение",publishTopic:"MEETING_SEND_TO_EXECUTE_EVENT",})});

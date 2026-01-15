@@ -1,0 +1,50 @@
+.modalWindowShadow{
+	display: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0px;
+    top: 0px;
+}
+
+.modalWindow{
+	margin: auto;
+}
+.buttonCancel{
+		cursor: pointer; 
+	   	background-color: white;
+	   	padding: 0 10px;
+	   	min-height: 2em;
+	   	min-width: 91px;
+	   	border-width: 1px;
+		border-style: solid;
+		border-color: #ccc;
+   }
+.cancelDiv{
+	padding-left: 4px;
+    padding-top: 10px;
+}
+.modalFon{
+	width: 1500px;
+    margin: auto;
+    background-color: white;
+    padding: 10px;
+}
+
+.templateItem {
+	cursor:default;
+	border-bottom: 1px solid gray;
+}
+
+.buttonCancelNoMargin {
+    cursor: pointer;
+    background-color: white;
+    padding: 0 10px;
+    min-height: 2em;
+    min-width: 91px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}

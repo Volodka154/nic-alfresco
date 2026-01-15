@@ -1,0 +1,1514 @@
+<alfresco-config>
+	
+	<config evaluator="model-type" condition="btl-incomming:documentDataType">
+		<forms>
+			<form>
+				<view-form template="/ru/btl/fpi/components/form/incomming-edit-form.ftl" />
+       			<edit-form template="/ru/btl/fpi/components/form/incomming-edit-form.ftl" />
+    			<create-form template="/ru/btl/fpi/components/form/incomming-create-form.ftl" />
+				<field-visibility>
+				
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />					
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:project" />	
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:controlDate" />
+					<show id="btl-incomming:handImmediately" />
+					
+					
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />		
+					<field id="btl-incomming:handImmediately" />		
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+					       <control-param name="field">btl-people:fio</control-param>
+						   <control-param name="s_field">btl-people:fio</control-param>
+						   <control-param name="style">width: 220px; height:20px; padding: 6px 12px; border-color: red;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	                   
+					    </control>
+                    </field> 
+					<field id="btl-incomming:contragentUnit" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_contractor_association.ftl">
+						    <control-param name="style">width:465px; height:20px; padding: 6px 12px; border-color: red;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>  
+						</control>
+										
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+						   	<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:500px; height:20px; padding: 6px 12px; border-color: red;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>  
+						</control>							
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+		            		<control-param name="style">width:403px; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:content" >
+						 <control template="/org/alfresco/components/form/controls/textarea.ftl">   
+						 	<control-param name="rows">6</control-param>	
+						 	<control-param name="style">border-radius: 4px; resize: none; border-color: red;</control-param>
+						 	<control-param name="noLabel">true</control-param>			
+                        </control>
+                    </field>
+                    
+                    <field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">						
+							<control-param name="style">width:123px; height:20px; padding: 6px 12px;     border-color: red;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>	
+						</control>					
+					</field>
+					
+					<field id="btl-document:responseTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>							
+							<control-param name="type">btl-outgoing:documentDataType</control-param>							
+						   <control-param name="style">width:225px; height:20px; padding: 6px 12px; </control-param>	
+						   <control-param name="link">true</control-param>	       
+					    </control>					
+                    </field> 
+                    
+                    <field id="btl-document:additionTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+						   <control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+						   <control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>							
+						   <control-param name="style">width:225px; height:20px; padding: 6px 12px; </control-param>	
+						   <control-param name="link">true</control-param>		       
+					    </control>					
+                    </field> 		
+                    <field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param> 
+							<control-param name="activelink">true</control-param> 
+							<control-param name="type">btl-project:projectDataType</control-param>						
+							<control-param name="style">width:530px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	
+						</control>					
+					</field>
+							
+				</appearance>
+			</form>
+		</forms>
+	</config>
+	
+	<config evaluator="node-type" condition="btl-incomming:documentDataType">
+		<forms>
+			<form>
+				<view-form template="/ru/btl/fpi/components/form/incomming-edit-form.ftl" />
+       			<edit-form template="/ru/btl/fpi/components/form/incomming-edit-form.ftl" />
+    			<create-form template="/ru/btl/fpi/components/form/incomming-create-form.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />					
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />									
+					<show id="btl-document:project" />	
+					<show id="btl-document:controlDate" />					
+					<show id="btl-incomming:handImmediately" />
+					<show id="btl-incomming:contragentUnit-comment" />
+					
+					<show id="btl-document:author-login" />	
+					<show id="btl-document:actualExecutor-login" />	
+					
+					<show id="btl-incomming:recipient-login" />
+					
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-incomming:contragentUnit-comment" read-only="true"/>
+					<field id="btl-document:controlDate" />		
+					<field id="btl-incomming:handImmediately" />		
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+					       <control-param name="field">btl-people:fio</control-param>
+						   <control-param name="s_field">btl-people:fio</control-param>
+						   <control-param name="style">width: 220px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	                   
+					    </control>
+                    </field> 
+					<field id="btl-incomming:contragentUnit" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_contractor_association.ftl">
+						    <control-param name="style">width:465px; height:20px; padding: 6px 12px; </control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>  
+						</control>
+										
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+						   	<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:500px; height:20px; padding: 6px 12px; </control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>							
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+		            		<control-param name="style">width:403px; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>				
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:content" >
+						 <control template="/org/alfresco/components/form/controls/textarea.ftl">   
+						 	<control-param name="rows">6</control-param>	
+						 	<control-param name="style">border-radius: 4px; resize: none;</control-param>
+						 	<control-param name="noLabel">true</control-param>			
+                        </control>
+                    </field>
+                    
+                    <field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">						
+							<control-param name="style">width:123px; height:20px; padding: 6px 12px;</control-param>		
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>	
+						</control>					
+					</field>
+					
+					<field id="btl-document:responseTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>							
+							<control-param name="type">btl-outgoing:documentDataType</control-param>							
+						   <control-param name="style">width:225px; height:20px; padding: 6px 12px; </control-param>	
+						   <control-param name="link">true</control-param>	       
+					    </control>					
+                    </field> 
+                    
+                    <field id="btl-document:additionTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+						   <control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+						   <control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>							
+						   <control-param name="style">width:225px; height:20px; padding: 6px 12px; </control-param>	
+						   <control-param name="link">true</control-param>		       
+					    </control>					
+                    </field> 		
+                    <field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param> 
+							<control-param name="activelink">true</control-param> 
+							<control-param name="type">btl-project:projectDataType</control-param>						
+							<control-param name="style">width:530px; height:20px; padding: 6px 12px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	
+						</control>					
+					</field>
+							
+				</appearance>
+			</form>
+			
+			<form id="review">
+				<view-form template="/ru/btl/fpi/components/form/incomming-review-form.ftl" />
+       			<edit-form template="/ru/btl/fpi/components/form/incomming-review-form.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />					
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />									
+					<show id="btl-document:project" />	
+					<show id="btl-document:controlDate" />
+					
+					<show id="btl-incomming:handImmediately" />
+					
+					<show id="btl-document:author-login" />	
+					<show id="btl-document:actualExecutor-login" />					
+					<show id="btl-incomming:recipient-login" />
+					
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />		
+					<field id="btl-incomming:handImmediately" />		
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+					       <control-param name="field">btl-people:fio</control-param>
+						   <control-param name="s_field">btl-people:fio</control-param>
+						   <control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	                   
+					    </control>
+                    </field> 
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>							
+						</control>					
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+						   	<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>							
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field> 
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+		            		<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+		            		<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>		
+		            	</control>			 					
+                    </field>
+					<field id="btl-document:content" >
+						 <control template="/org/alfresco/components/form/controls/textarea.ftl">   
+						 	<control-param name="rows">4</control-param>	
+						 	<control-param name="style">border-radius: 4px; resize: none;</control-param>
+						 	<control-param name="noLabel">true</control-param>			
+                        </control>
+                    </field>
+                    
+                    <field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">						
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>	
+						</control>					
+					</field>
+					
+					<field id="btl-document:responseTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>							
+							<control-param name="type">btl-outgoing:documentDataType</control-param>							
+						   <control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	   
+						   <control-param name="link">true</control-param>	    
+					    </control>					
+                    </field> 
+                    
+                    <field id="btl-document:additionTo">	
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">	
+						   <control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+						   <control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>							
+						   <control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>		
+						   <control-param name="link">true</control-param>	       
+					    </control>					
+                    </field> 		
+                    <field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">	
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param> 
+							<control-param name="activelink">true</control-param> 
+							<control-param name="type">btl-project:projectDataType</control-param>						
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>	
+							<control-param name="styleButton">height:32px !important;</control-param>	
+						</control>					
+					</field>
+							
+				</appearance>
+			</form>
+
+			<form id="incommingResolutionTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/resolutionTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/resolutionTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingAttachmentsTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/attachmentsTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/attachmentsTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingLinksTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/linksTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/linksTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingOriginalTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/originalTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/originalTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingFamiliarizedTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/familiarizedTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/familiarizedTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingHistoryTab">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/historyTab.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/historyTab.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+			<form id="incommingSysInfo">
+				<view-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/sysInfo.ftl" />
+				<edit-form template="/ru/btl/fpi/components/form/parts/incomming/tabs/sysInfo.ftl" />
+				<field-visibility>
+					<show id="btl-document:state" />
+					<show id="btl-document:regNumber" />
+					<show id="btl-document:regDate" />
+					<show id="btl-incomming:hasOriginal" />
+					<show id="btl-incomming:recipient" />
+					<show id="btl-incomming:contragentUnit" />
+					<show id="btl-incomming:contragentPerson" />
+					<show id="btl-incomming:outgoingNumber" />
+					<show id="btl-incomming:outgoingDate" />
+					<show id="btl-document:copiesSheets" />
+					<show id="btl-document:copiesAdditional" />
+					<show id="btl-document:sheetsCount" />
+					<show id="btl-document:additionalCount" />
+					<show id="btl-incomming:typeDilivery" />
+					<show id="btl-document:content" />
+					<show id="btl-document:docType" />
+					<show id="btl-document:responseTo" />
+					<show id="btl-document:additionTo" />
+					<show id="btl-document:project" />
+					<show id="btl-document:controlDate" />
+
+					<show id="btl-incomming:handImmediately" />
+
+					<show id="btl-document:author-login" />
+					<show id="btl-document:actualExecutor-login" />
+					<show id="btl-incomming:recipient-login" />
+
+				</field-visibility>
+				<appearance>
+					<field id="btl-document:state" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regNumber" read-only="true">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:100%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:regDate" read-only="true"/>
+					<field id="btl-document:controlDate" />
+					<field id="btl-incomming:handImmediately" />
+					<field id="btl-incomming:hasOriginal" />
+					<field id="btl-incomming:recipient" mandatory="true">
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width: 190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentUnit" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:contragentPerson" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_contragent_person_association.ftl">
+							<control-param name="field">btl-people:fio</control-param>
+							<control-param name="s_field">btl-people:fio</control-param>
+							<control-param name="style">width:550px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="parentField">btl-incomming_contragentUnit</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingNumber" >
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:outgoingDate" />
+					<field id="btl-document:copiesSheets" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:copiesAdditional" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:sheetsCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:additionalCount" help="">
+						<control template="/org/alfresco/components/form/controls/textfield.ftl" >
+							<control-param name="style">width:90%; height: 20px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-incomming:typeDilivery" help="">
+						<control>
+							<control-param name="style">width:100%; height: 34px; padding: 6px 12px; border-radius: 4px;</control-param>
+						</control>
+					</field>
+					<field id="btl-document:content" >
+						<control template="/org/alfresco/components/form/controls/textarea.ftl">
+							<control-param name="rows">4</control-param>
+							<control-param name="style">border-radius: 4px; resize: none;</control-param>
+							<control-param name="noLabel">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:docType" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="style">width:130px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+							<control-param name="filter">type:%27%5Cu0412%5Cu0445%5Cu043E%5Cu0434%5Cu044F%5Cu0449%5Cu0438%5Cu0439%27</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:responseTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-outgoing:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+
+					<field id="btl-document:additionTo">
+						<control template="/ru/btl/fpi/components/form/controls/btl_associationMany.ftl">
+							<control-param name="field">btl-document:regNumber,btl-document:regDate</control-param>
+							<control-param name="s_field">btl-document:regNumber</control-param>
+							<control-param name="type">btl-incomming:documentDataType</control-param>
+							<control-param name="style">width:190px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="link">true</control-param>
+						</control>
+					</field>
+					<field id="btl-document:project" >
+						<control template="/ru/btl/fpi/components/form/controls/btl_association.ftl">
+							<control-param name="field">shortName</control-param>
+							<control-param name="s_field">shortName</control-param>
+							<control-param name="activelink">true</control-param>
+							<control-param name="type">btl-project:projectDataType</control-param>
+							<control-param name="style">width:320px; height:20px; padding: 6px 12px; border-right: 0px;</control-param>
+							<control-param name="styleButton">height:32px !important;</control-param>
+						</control>
+					</field>
+
+				</appearance>
+			</form>
+
+		</forms>
+	</config>		
+</alfresco-config>

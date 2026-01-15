@@ -1,0 +1,10 @@
+var negotiationRolesList = [
+    {
+        name: "DOCUMENT_SIGNER",
+        title: "Подписант документа",
+    },
+    {
+        name: "DOCUMENT_AUTHOR_MANAGER",
+        title: "Непосредственный руководитель автора документа",
+    }
+];

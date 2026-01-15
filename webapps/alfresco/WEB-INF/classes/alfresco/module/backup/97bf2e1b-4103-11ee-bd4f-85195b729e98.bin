@@ -1,0 +1,44 @@
+<import resource="classpath:alfresco/extension/templates/webscripts/ru/btl/fpi/search/v2/search-registry.lib.js">;
+
+var statuses = [
+    "Идея",
+    "Активные",
+    "Закрыт"
+];
+var projectTypes = [
+   "Научный",
+   "Общедеятельный",
+   "Аванпроект"
+];
+var stages = [
+  "Заявка",
+  "НТС",
+  "Утверждение",
+  "Реализация",
+  "Завершение"
+];
+
+(function () {
+    var searchRegistry = SearchRegistry.constructor(args,
+        '(TYPE:"btl-project:projectDataType")',
+        [],
+        function (n, now, in3days) {
+            return {
+                "nodeRef": n.nodeRef + "",
+                "btl-project:shortName": n.properties["btl-project:shortName"],
+                "btl-project:startDate": dateToString(n.properties["btl-project:startDate"], "dd-MM-yyyy"),
+                "btl-project:projectManager-login": n.properties["btl-project:projectManager-content"],
+                "btl-project:directionDepartment-ref": n.properties["btl-project:directionDepartment-content"],
+                "btl-project:projectType": projectTypes[n.properties["btl-project:projectType"]],
+                "btl-project:stage": stages[n.properties["btl-project:stage"]],
+                "btl-project:executionOrganization-ref": n.properties["btl-project:executionOrganization-content"],
+                "btl-project:state": statuses[n.properties["btl-project:state"]]
+            };
+        }, {
+            "btl-project:projectManager-login":"btl-project:projectManager-content",
+            "btl-project:directionDepartment-ref": "btl-project:directionDepartment-content",
+            "btl-project:executionOrganization-ref": "btl-project:executionOrganization-content"
+        }, "btl-project:projectDataType");
+
+    model.data = searchRegistry.getData();
+})();

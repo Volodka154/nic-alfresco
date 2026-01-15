@@ -1,0 +1,36 @@
+.alfresco-layout-ClassicWindow {
+   border: @standard-border;
+   margin: 10px;
+   border-top-left-radius: 6px;
+   border-top-right-radius: 6px;
+
+   &__titlebar {
+      background-color: #EEEEEE;
+      border-bottom: @standard-border;
+      padding: 5px;
+      border-top-left-radius: 6px;
+      border-top-right-radius: 6px;
+   }
+
+   &__content {
+      overflow: auto;
+      padding: 10px;
+   }
+
+   &.shadow {
+      box-shadow: @standard-box-shadow;
+   }
+
+   &.bottomBorderRadius {
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+   }
+
+   .borderLess {
+      border: none;
+   }
+}
+.dijitTextBoxDisabled{
+    background:#E5F2FF;
+}
+

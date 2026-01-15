@@ -1,0 +1,1 @@
+function shutdownTask(a){if(window.parent.document!=document){window.location.reload()}else{window.location.replace(a)}};

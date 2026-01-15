@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Implementation-Title: Alfresco _vti_bin Web Application
+Build-Date: 2017-04-06T17:52:17Z
+Implementation-Version: 1.1.6
+Archiver-Version: Plexus Archiver
+Built-By: build
+Specification-Vendor: Alfresco Software
+Specification-Title: Alfresco _vti_bin Web Application
+Implementation-Vendor-Id: org.alfresco.aos-module
+Implementation-Vendor: Alfresco Software
+Created-By: Apache Maven 3.2.5
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://www.alfresco.org/
+Specification-Version: 1.0.0
+

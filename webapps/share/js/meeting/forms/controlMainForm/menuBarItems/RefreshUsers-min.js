@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../menuBarItems/_MenuBarItem","meeting/dialogs/GetEmployees","meeting/utils/base","dojo/_base/lang"],function(a,d,b,c,e){return a([d],{label:"Обновить",publishTopic:"PRESS_MEETING_REFRESH_USERS"})});

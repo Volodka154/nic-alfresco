@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","meeting/forms/_DynamicForm"],function(b,a){return b([a],{routeConfigEnable:false,postCreate:function(){this.widgets=[{name:"meeting/forms/controlApprovalForm/tabApproval",config:{routeConfigEnable:this.routeConfigEnable}}];this.inherited(arguments)},})});

@@ -1,0 +1,43 @@
+define(["dojo/_base/declare",
+        "meeting/choices/_Choice",
+        "dojo/_base/lang"],
+    function (declare, Choice, lang) {
+        return declare([Choice], {
+            name: "employee-content",
+            header: "Выбрать сотрудника",
+            value: "",
+            
+            publishTopic: "ADD_NEGOTIATORS_TO_LIST",
+	        publishGlobal: true,
+	        fieldId:"employeeContentField",
+	        
+            labelText: "Сотрудник",
+            labelButton: "Выбрать",
+            urlList: "/share/proxy/alfresco/filters/association",
+            dataUrl:{
+                "type":"btl-emp:employee-content",
+                "s_field":"btl-people:fio",
+                "field":"btl-people:fio"
+            },
+            itemUrl:"/share/proxy/alfresco/picker/associationItem",
+            dataItemUrl:{
+                "type":"btl-emp:employee-content",
+                "field":"btl-people:fio"
+            },
+            
+            
+            postMixInProperties: function () {
+            	this.inherited(arguments);
+            	this.alfSubscribe("UPDATE_NEGOTIATION_CONTROL", lang.hitch(this, this.clearNegotiation), true);
+            	
+            },
+            
+            
+            clearNegotiation:function(data){
+                	this.setValue(data);
+                
+            }
+            
+            
+        });
+    });

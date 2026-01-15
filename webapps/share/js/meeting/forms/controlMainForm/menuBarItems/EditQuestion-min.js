@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../menuBarItems/_MenuBarItem","dojo/_base/lang"],function(a,b,c){return a([b],{label:"Изменить вопрос",publishTopic:"ALF_EDIT_PROGRAMM",publishPayloadType:"PROCESS",publishGlobal:true})});

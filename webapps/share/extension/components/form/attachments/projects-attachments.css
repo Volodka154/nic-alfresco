@@ -1,0 +1,114 @@
+.dijitDialogCloseIcon {
+    width: 25px!important;
+    height: 15px!important;
+    background: url(/share/res/themes/lightTheme/yui/assets/sprite.png) no-repeat 0 -300px!important;
+}
+
+.attachments-load{
+    padding-top:10px;
+    margin-left:5%;
+    width: 90%;
+}
+.pq-row-parent-attach{
+    background: #396291;
+}
+
+.select-category > td {
+    font-weight: bold!important;
+}
+
+.select-category > td > span {
+    font-weight: bold;
+}
+
+tr.pq-row-parent-attach > td {
+    background: #396291;
+}
+
+.attachments-load div{
+    margin-top: 10px;
+}
+.body-attachments{
+    margin-top:20px;
+}
+
+.body-resources{
+    margin-top:20px;
+}
+
+
+.attachments-load > div > select {
+    width: 200px;
+    height: 1.5em;
+    margin-top: 5px;
+}
+
+.attachments-load > .alfresco-buttons-AlfButton {
+    color: white;
+    background-color: #0C79BF;
+    font-size: 13px!important;
+    padding: 3px;
+    text-align: center;
+    cursor: pointer;
+    width: 200px;
+    display: block;
+    margin: 0;
+}
+
+.dijitDialogPaneActionBar > .alfresco-buttons-AlfButton {
+    border-radius: 3px;
+    line-height: 1.5em;
+    padding: 0 50px;
+}
+
+.attachments-description{
+    margin-top:5px;
+    margin-bottom:20px;
+    margin-left:5%;
+    width: 90%;
+}
+.attachments-description label{
+
+}
+.attachments-description textarea {
+    width: 100%;
+}
+.delete-message{
+    text-align: center;
+    padding-top: 15px !important;
+    font-size: 14px;
+}
+
+.resource-dialog {
+    margin-left:20px;
+}
+.link-dialog{
+    padding: 20px;
+}
+.link-dialog button {
+    margin-bottom:20px;
+}
+
+.link-name {
+    margin-bottom: 10px;
+    height: 50px;
+    overflow: hidden;
+}
+.mandatory_indicator{
+    color:red;
+    padding:5px;
+}
+.visible_none{
+    display: none;
+}
+
+.item-preview{
+    width: 25px;
+    height: 25px;
+    margin: auto;
+}
+
+.ui-jqgrid tr.ui-row-ltr td.attachment-comment {
+    word-break: normal;
+    white-space: normal;
+}

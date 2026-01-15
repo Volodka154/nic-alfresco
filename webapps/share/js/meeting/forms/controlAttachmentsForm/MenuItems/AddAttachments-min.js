@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_AlfCreateContentMenuBarItem","./_mixinIsReadOnly",],function(a,c,b){return a([c,b],{label:"Загрузить",})});

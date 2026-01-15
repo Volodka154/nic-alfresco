@@ -1,0 +1,35 @@
+<div data-dojo-attach-point="widgetPanel" style="margin-bottom: 10px;">
+    <style>
+        .button {
+        background-color: #E9E9E9;
+        color: #333333;
+        border: none;
+        padding: 4px 14px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+        }
+    </style>
+    <label>${labelWidget}</label> </br>
+    <input data-dojo-attach-point="valSingle" name="${nameField}_val" disabled class="" style="width: ${width}; height:${height}; border-radius: 3px; background: white;"> </input>
+    <div data-dojo-attach-point="panelMany" style="width: ${width}; height:${height}; border: 1px solid #d3d3d3; border-radius: 3px; float: left; overflow-y: scroll;">
+        <table data-dojo-attach-point="valMany" name="${nameField}_val" cellpadding="0" cellspacing="0" style="width: 100%;">
+            <tbody >
+            </tbody>
+        </table>
+    </div>
+    <span class="button" data-dojo-attach-event='onclick: showDialog'>${btnLabel}</span>
+    <input data-dojo-attach-point="nodeRef" name="${nameField}" type="hidden"> </input>
+    <input data-dojo-attach-point="added, textbox" name="${nameField}_added" type="hidden"> </input>
+    <div class="control" data-dojo-attach-point="_controlNode">
+        <div class="dijit dijitReset dijitInline dijitLeft dijitTextBox dijitValidationTextBox" roleName="presentation" >
+            <div class="dijitReset dijitInputField dijitInputContainer">
+                <input data-dojo-attach-point="removed, textbox,focusNode" name="${nameField}_removed" type="hidden" dojoType="dijit.form.ValidationTextBox"/>
+            </div>
+        </div>
+    </div>
+</div>

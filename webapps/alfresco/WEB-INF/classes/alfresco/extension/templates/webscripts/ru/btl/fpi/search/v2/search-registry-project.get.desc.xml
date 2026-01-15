@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>Search Registry Project</shortname>
+    <description>Search Registry Project</description>
+    <url>/documents/v2/search-registry-project</url>
+    <authentication>user</authentication>
+    <transaction>required</transaction>
+    <format default="json">extension</format>
+</webscript>

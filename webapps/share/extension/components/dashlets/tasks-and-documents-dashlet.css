@@ -1,0 +1,215 @@
+.tasks-and-documents{
+	height: 927px;
+}
+
+#right-column-tasks-and-documents_dashlet .ac_button {
+    height: 22px !important;
+}
+
+#content-tasks-and-documents_dashlet a,
+.likeHref {
+    color:#2e6da4;
+    text-decoration: underline;
+}
+
+#tasks-and-documents_dashlet_body{
+    display: flex;
+}
+
+.left-column-tasks-and-documents_dashlet{
+	width: 200px;
+	padding-right: 10px;
+}
+
+.right-column-tasks-and-documents_dashlet{
+    width: calc(100% - 220px);
+    padding-top: 10px;
+}
+
+#filters-tasks-and-documents_dashlet{
+	height: 37px;
+	/*border-bottom: 1px solid #ccc;*/
+}
+
+#menu-my-documents_dashlet, #menu-my-tasks_dashlet, #menu-resolution_dashlet, #filters-tasks-and-documents_dashlet{
+	margin-top: 10px;
+}
+
+.item-menu{
+	border-right: 1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	padding: 10px 20px;
+}
+
+.item-menu:hover, .item-first-filters:hover{
+	background: #fff3a1;
+    color:#000000;
+	cursor: pointer;
+}
+
+.item-first-filters{
+	border: 1px solid #ccc;
+    border-bottom: 0 solid #ccc;
+    padding: 10px 10px;
+    float: left;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.second-filters{
+	width: 100%;
+    /*border-top: solid 1px #ccc;*/
+
+}
+.item-second-filters{
+	padding: 20px 10px;
+    float: left;
+}
+#initiator-filters-tasks-and-documents_dashlet, #performer-filters-tasks-and-documents_dashlet, #initiator-docs-filters-tasks-and-documents_dashlet {
+	height: 14px;
+	width: 230px;
+    border: 1px solid #ccc;
+
+}
+#initiator-filters-tasks-and-documents_dashlet .ac_input,  #performer-filters-tasks-and-documents_dashlet .ac_input, #initiator-docs-filters-tasks-and-documents_dashlet .ac_input{
+    border-right: 1px solid #ccc;
+}
+
+.new-select-style {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    overflow: hidden; 
+    height: 23px;
+    background: url(icon/btnCombobox.png) no-repeat right #fff;
+    width: 268px;
+   }
+.new-select-style select {
+    border-radius: 0;
+    background: transparent;
+    height: 23px;
+    border: 0;
+    font-size: 16px;
+    line-height: 1;
+    -webkit-appearance: none;
+    width: 268px;
+}
+
+.icon-star{
+	display: block;
+	height: 16px;
+	width: 16px;
+    margin: auto;
+	background-size: 100%;
+	background-image:url(icon/star-32-32.png)
+}
+.icon-yellow-star{
+	display: block;
+	height: 16px;
+	width: 16px;
+	margin: auto;
+	background-size: 100%;
+	background-image:url(icon/yellow-star-32-32.png)
+}
+.icon-clip{
+	display: block;
+	height: 16px;
+	width: 16px;
+    margin: auto;
+	background-size: 100%;
+	background-image:url(icon/clip-32-32.png)
+}
+tr.overdue-tasks td{
+    background-color: #FFE7E7 !important;
+    border: 0.5px solid #FFF;
+}
+
+tr.completeChildrenTask td{
+    background-color: #E7FFE7 !important;
+    border: 0.5px solid #FFF;
+}
+
+tr.ending-time-task td{
+    background-color: #FFFFE7 !important;
+    border: 0.5px solid #FFF;
+}
+
+tr.isParent .pq-td-div{
+   font-weight: bold !important;
+}
+
+.active{
+	background-color: #fff3a1!important;
+    color:#000000!important;
+}
+
+.clean{
+	clear: both;
+}
+
+.background-red{
+    background: #e00000;
+}
+
+.color-white{
+    color:white;
+}
+
+.count{
+    font-weight: bold;
+    margin-left: 2px;
+}
+
+.closeButtonTD{
+	float: right;
+    margin-right: 0.5%;
+    margin-top: -25px;
+    color: white;
+    cursor: default;
+    padding: 2px 6px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: initial;
+    border-image: initial;
+    border-radius: 4px;
+}
+
+.modalWindowShadowTD{	    
+    display: none;
+    position: fixed;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    left: 0px;
+    top: 0px;
+    padding-top: 30px;
+    overflow: auto;
+}
+
+.frameShadowBackgroundTD{
+	background-color: white;
+    width: 99%;
+    height: 96%;
+    margin: auto;
+    border-radius: 4px;
+}
+
+.klickedColl{
+	
+}
+
+.klickedColl:HOVER{
+	    border-bottom: 1px solid !important;
+}
+
+.rowcls_bold{
+}
+
+tr.pq-grid-row.pq-grid-oddRow.rowcls_bold td.pq-grid-cell div{
+	font-weight: bold;
+}
+tr.pq-grid-row.rowcls_bold td.pq-grid-cell div{
+	font-weight: bold;
+}
+

@@ -1,0 +1,16 @@
+.head_table_choice_contractor{
+    width: 120px;
+    display: block;
+    float: left;
+    margin-right: 5px;
+    border-bottom: 1px solid black;
+}
+
+.body_table_choice_contractor{
+    width: 120px;
+    display: block;
+    overflow: hidden;
+    float: left;
+    border-right: solid 1px;
+    margin-right: 5px;
+}

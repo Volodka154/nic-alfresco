@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<template-instance>
+   <template-type>org/alfresco/dashboard</template-type>
+   <description>Four columns</description>
+   <properties>
+      <gridClass>yui-g</gridClass>
+      <gridColumn1>5</gridColumn1>
+      <gridColumn2>5</gridColumn2>
+      <gridColumn3>5</gridColumn3>
+      <gridColumn4>5</gridColumn4>
+   </properties>
+    <components>
+    	 <!-- Uploaders -->
+	      <component>
+	         <region-id>html-upload</region-id>
+	         <url>/components/upload/html-upload</url>
+	      </component>
+	      <component>
+	         <region-id>flash-upload</region-id>
+	         <url>/components/upload/flash-upload</url>
+	      </component>
+	      <component>
+	         <region-id>file-upload</region-id>
+	         <url>/components/upload/file-upload</url>
+	      </component>
+	      <component>
+	         <region-id>dnd-upload</region-id>
+	         <url>/components/upload/dnd-upload</url>
+	      </component>
+    </components>
+</template-instance>

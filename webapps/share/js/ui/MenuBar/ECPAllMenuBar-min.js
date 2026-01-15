@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBar","btlUI/MenuItem/ECPVerifyPacMenuItem","btlUI/MenuItemLink/ECPDownloadAllMenuItemLink.lib"],function(d,b,c,a){return d([b],{parentNodeRef:null,addButtons:function(){var f=new c({parentNodeRef:this.parentNodeRef});f.placeAt(this.domNode);var e=new a({parentNodeRef:this.parentNodeRef});e.placeAt(this.domNode)},})});

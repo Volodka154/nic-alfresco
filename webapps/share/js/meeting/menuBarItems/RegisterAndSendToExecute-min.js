@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Зарегистрировать и отправить на исполнение",publishTopic:"MEETING_REGISTER_AND_SEND_TO_EXECUTE",})});

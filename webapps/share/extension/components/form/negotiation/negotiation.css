@@ -1,0 +1,115 @@
+.negotiation-tab{
+	display: inherit;
+}
+
+.disabled-class{
+	pointer-events: none;
+	opacity: 0.4;
+}
+
+.hidden-class{
+	display: none;
+}
+.edit-list-container{
+	
+}
+
+.negotiation-tree{
+	border: 1px solid #ccc;
+	min-height: 54px;
+}
+
+.negotiators-list-buttons{
+	float: left;
+}
+
+.edit-buttons{
+	margin: 0 10px 10px 0; 
+}
+
+.negotiation-list-btns{
+	overflow: hidden;
+	display: table;
+	width: 100%;
+}
+
+.negotiation-list-btn{
+	display: table-cell;
+	
+	cursor: default;
+    background-color: white;
+    min-height: 2em;
+    border: 1px solid #ccc;
+	
+}
+
+.employeeContainer{
+	width: 350px;
+}
+
+.ac_input{
+	width: 400px;
+}
+
+.negotiation-result-table td{
+	word-wrap:break-word;
+}
+
+.icon-print{
+    display: inline-block;
+
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+
+    height: 20px;
+    width: 20px;
+    float: right;
+
+
+    background-size: 100%;
+    background-image:url(/share/res/components/form/img/print2.png)
+}
+
+.negitiationfieldStyle{
+	width: 300px !important;
+    padding: 6px 12px !important;
+    border-radius: 4px !important;
+    border: 1px solid #ccc !important;
+	
+}
+
+.negitiationButtonAction {
+    cursor: default;
+    background-color: white;
+    padding: 0 10px;
+    min-height: 2em;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #ccc;
+}
+
+
+
+.templateItem {
+    cursor: default;
+    border-bottom: 1px solid gray;
+}
+.templateItem:HOVER {
+    background-color: #efefef;
+}

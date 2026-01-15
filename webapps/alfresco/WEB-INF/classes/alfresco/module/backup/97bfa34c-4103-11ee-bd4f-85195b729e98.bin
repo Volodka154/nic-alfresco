@@ -1,0 +1,154 @@
+function main() {
+    var bufEmail = [];
+   //Получаем список всех пользователей Alfresco
+    var alfQuery = 'TYPE:"cm:person"';
+    var answer = { "status" : "200", "message": "\u0421\u0438\u043D\u0445\u0440\u043E\u043D\u0438\u0437\u0430\u0446\u0438\u044F \u0443\u0441\u043F\u0435\u0445\u043D\u043E \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430" };
+    var queryDef = {
+        query: alfQuery,
+        language: "fts-alfresco",
+        templates: []
+    };
+
+    var usersAlfresco = fpiSearch.query(queryDef);
+
+//******  Проверка на связь пользователей и пользователей Alfresco ************************
+    // Получаем список сотрудников
+    var Employees = fpiSearch.query({query:'TYPE:"btl-emp:employee-content"', language: "fts-alfresco"});
+    var EmployeeWithOutUserAlfrescoLink = [];
+    if(Employees && Employees.length > 0){
+        Employees.forEach(function(item){
+            if(!("btl-people:user_alfresco" in item.assocs)){
+                EmployeeWithOutUserAlfrescoLink.push(item);
+            }
+        });
+
+        if(EmployeeWithOutUserAlfrescoLink.length > 0){
+            EmployeeWithOutUserAlfrescoLink.forEach(function(item){
+                var existUserAlfresco = false;
+                for(var i = 0, j = usersAlfresco.length; i < j ; i++){
+                	
+                	if (isContractor(usersAlfresco[i]))
+                		continue;
+                	
+                    try{
+                        if(bufEmail.indexOf(item.properties["btl-people:email"].toString()) > -1)
+                            break;
+                        if(usersAlfresco[i].sourceAssocs && "btl-people:user_alfresco" in usersAlfresco[i].sourceAssocs)
+                            continue;
+                        if(item.properties["btl-people:email"].toString() && usersAlfresco[i].properties["cm:email"].toString() &&
+                         item.properties["btl-people:email"].toString() == usersAlfresco[i].properties["cm:email"].toString()){
+                            existUserAlfresco = true;
+                            item.createAssociation(usersAlfresco[i], "btl-people:user_alfresco");
+                            bufEmail.push(item.properties["btl-people:email"].toString());
+                            break;
+                        }
+                    }catch(e){
+                        java.lang.System.out.println("synchronizationEmployees.get - поиск по email :" + e);
+                    }
+                }
+                if(!existUserAlfresco){
+                    item.properties['btl-people:notActual'] =  true;
+                    item.properties['btl-people:not_email_notify'] = true;
+                    try{
+                        item.save();
+                    }catch(e){
+                        java.lang.System.out.println("synchronizationEmployees.get - save :" + e);
+                    }
+                }
+            });
+
+        }
+    }
+//*********************************************************************************************
+    var newEmployees = [];
+    var existEmployees = [];
+    var userNode;
+
+    var node = companyhome.childByNamePath("btlRepo/Dictionaries/Employee");
+    if(node == null || node =="")
+        return answer = { status : "500", message: "\u041E\u0442\u0441\u0443\u0442\u0441\u0442\u0432\u0443\u0435\u0442 \u0441\u0442\u0440\u0443\u043A\u0442\u0443\u0440\u0430 \u043A\u0430\u0442\u0430\u043B\u043E\u0433\u0430 \u0434\u043B\u044F \u0445\u0440\u0430\u043D\u0435\u043D\u0438\u044F \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u043E\u0432" };
+
+    for (var i = 0, j = usersAlfresco.length; i < j; i++){
+    	
+    	if (isContractor(usersAlfresco[i]))
+    		continue;
+    	
+    	userNode = usersAlfresco[i];
+    	if(userNode.properties["cm:email"] && bufEmail.indexOf(userNode.properties["cm:email"].toString()) > -1)
+            continue;
+        if(!userNode.sourceAssocs["btl-people:user_alfresco"]){
+            newEmployees.push(userNode);
+        }else{
+            existEmployees.push(userNode);
+        }
+    }
+    //Добавляем в справочник Сотрудников новых пользователей Alfresco
+    newEmployees.forEach(function(item){
+        if(item.hasAspect("cm:personDisabled") || item.properties["cm:homeFolder"] == null)
+            return;
+        
+        
+        
+        var properties = new Array();
+        var names = (item.properties["cm:firstName"])? item.properties["cm:firstName"]:"";
+        
+        if (item.properties["cm:lastName"] == null || item.properties["cm:lastName"] == "")
+    	{
+        	employeeNoFam.push(names);
+        	return;
+    	}
+        //logger.log("item.properties['cm:lastName'] = " + item.properties["cm:lastName"]);
+        
+        if(names!=""){
+            names = names.split(" ");
+        }
+        properties['btl-people:firstname'] = (names[0])? names[0]:"";
+        properties['btl-people:middlename'] = (names[1])? names[1]:"";
+        properties['btl-people:surname'] = (item.properties["cm:lastName"])? item.properties["cm:lastName"]:"Surname Null";
+        properties['btl-people:email'] = (item.properties["cm:email"])? item.properties["cm:email"]:"";
+        properties['btl-people:phone'] = (item.properties["cm:telephone"])? item.properties["cm:telephone"]:"";
+        properties['btl-people:mobile'] = (item.properties["cm:mobile"])? item.properties["cm:mobile"]:"";
+        var Employee = node.createNode(null, "btl-emp:employee-content", properties);
+        if(Employee == null)
+            return answer = { status : "500", message: "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u0434\u043E\u0431\u0430\u0432\u0438\u0442\u044C \u0441\u043E\u0442\u0440\u0443\u0434\u043D\u0438\u043A\u0430 \u0441 \u0430\u043A\u043A\u0430\u0443\u043D\u0442\u043E\u043C" + item.properties["cm:userName"] };
+        Employee.createAssociation(item, "btl-people:user_alfresco");
+    });
+
+    //Обновление справочника сотрудников
+    existEmployees.forEach(function(item){
+        var Employee = item.sourceAssocs["btl-people:user_alfresco"][0];
+        var names = (item.properties["cm:firstName"])? item.properties["cm:firstName"]:"";
+        if(names!=""){
+            names = names.split(" ");
+        }
+        Employee.properties['btl-people:firstname'] = (names[0])? names[0]:"";
+        Employee.properties['btl-people:middlename'] = (names[1])? names[1]:"";
+        Employee.properties['btl-people:surname'] = (item.properties["cm:lastName"])? item.properties["cm:lastName"]:"Surname Null";
+        Employee.properties['btl-people:email'] = (item.properties["cm:email"])? item.properties["cm:email"]:"";
+        Employee.properties['btl-people:phone'] = (item.properties["cm:telephone"])? item.properties["cm:telephone"]:"";
+        Employee.properties['btl-people:mobile'] = (item.properties["cm:mobile"])? item.properties["cm:mobile"]:"";
+        Employee.properties['btl-people:notActual'] = item.hasAspect("cm:personDisabled") || item.properties["cm:homeFolder"] == null;
+        Employee.save();
+    });
+
+   return answer;
+}
+
+employeeNoFam = [];
+
+model.data = main();
+model.employeeNoFam = employeeNoFam;
+
+function isContractor(node)
+{
+	var contr = node.sourceAssocs["btl-people:user_alfresco"];
+	if (contr != null)
+	{
+		if (contr[0].typeShort == "btl-person:person-content")
+		{
+			return true;
+		}
+			
+	}
+	return false;
+}

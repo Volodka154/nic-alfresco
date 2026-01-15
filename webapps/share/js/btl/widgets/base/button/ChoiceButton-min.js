@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dijit/form/Button","dijit/_TemplatedMixin","dojo/text!./templates/ChoiceButton.html","alfresco/core/Core","alfresco/core/CoreWidgetProcessing",],function(c,a,e,d,f,b){return c([a,f,b],{templateString:d,style:"margin-top: 26px; margin-left: -8px;",iconClass:"dijitArrowButtonInner",showLabel:false,})});

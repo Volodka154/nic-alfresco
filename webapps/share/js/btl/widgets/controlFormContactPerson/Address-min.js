@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/forms/controls/TextArea","dojo/_base/lang","dojo/dom-style"],function(b,d,c,a){return b([d],{label:"Адрес",name:"prop_btl-person_address",nodeStyle:{width:"280px",height:"145px"},completeWidgetSetup:function(){this.inherited(arguments);var e=this._controlNode.querySelector("textarea");if(this.nodeStyle&&e){a.set(e,this.nodeStyle)}},})});

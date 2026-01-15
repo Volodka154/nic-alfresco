@@ -1,0 +1,26 @@
+.sortable-action {
+    width: 500px;
+    margin: 0 50px;
+    padding: 10px;
+    float: left;
+}
+.sortable-action-head{
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    color: #333;
+    padding: 10px;
+}
+
+.sortable-action-head-submenu{
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    color: #333;
+    padding: 10px;
+}
+
+.sortable-action-item{
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px 20px;
+    cursor: move;
+}

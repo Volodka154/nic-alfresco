@@ -1,0 +1,8 @@
+.alfresco-dialog-AlfDialog .dialog-body .alfresco-forms-Form.root-dialog-form > form > .alfresco-forms-controls-BaseFormControl > .title-row {
+    display: block;
+    float: unset;
+    margin-right: 8px;
+    margin-top: 2px;
+    text-align: unset;
+    width: unset;
+}

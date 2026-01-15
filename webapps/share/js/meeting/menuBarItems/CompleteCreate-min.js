@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuBarItem"],function(a,b){return a([b],{label:"Закончить подготовку",publishTopic:"MEETING_COMPLETE_CREATE",})});

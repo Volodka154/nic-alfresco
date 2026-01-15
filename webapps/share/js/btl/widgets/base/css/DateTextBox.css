@@ -1,0 +1,12 @@
+.alfresco-forms-controls-TextBox {
+   .dijitCalendar, .dijitCalendar:hover, .dijitCalendarHover, .dijitCalendarDateTemplate, .dijitCalendarPreviousMonth, .dijitCalendarNextMonth {
+      background-color: #fff !important;
+   }
+   .dijitCalendarDateTemplate, .dijitCalendarPreviousMonth, .dijitCalendarNextMonth {
+      border-bottom-color: #fff !important;
+   }
+   .dijitCalendarPreviousMonth .dijitCalendarDateLabel, .dijitCalendarNextMonth .dijitCalendarDateLabel {
+      border-color: #fff !important;
+      color: #ccc !important;
+   }
+}

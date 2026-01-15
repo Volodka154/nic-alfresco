@@ -1,0 +1,32 @@
+.floatLeft {
+    float: left;
+}
+.paddingLeft{
+    padding-left: 12px;
+}
+
+.roleAddButton {
+    background: none;
+    border: 1px solid;
+    border-color: #ccc;
+    padding: 6px;
+    margin-top: 15px;
+}
+.roleAddButton:hover {
+    border-color: #759DC0;
+}
+
+.roleListTable {
+    width: 100%;
+}
+
+.roleListTable th, .roleListTable td {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+}
+
+.roleListTable a, .roleListTable a:visited {
+    color: -webkit-link;
+    text-decoration: underline;
+}

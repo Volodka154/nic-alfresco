@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuItem","../Dialog/ECPVerifyPacDialog.lib"],function(b,c,a){return b([c],{label:"Проверить все подписи",iconClass:"dijitCommonIcon dijitIconCopy",parentNodeRef:null,endPostCreate:function(){this.dialog=new a({parentNodeRef:this.parentNodeRef})},onClick:function(d){this.dialog.renderContentDialog()},})});

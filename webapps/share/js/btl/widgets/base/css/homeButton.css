@@ -1,0 +1,10 @@
+.alfresco-buttons-home-page {
+    margin-left: 20px !important;
+}
+.icon-buttons-home-page {
+    background-image: url("./images/home1.png");
+    width: 18px;
+    height: 16px;
+    margin-right: 10px;
+    background-size: 100%;
+}

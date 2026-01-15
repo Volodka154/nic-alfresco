@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/menus/AlfMenuBarItem"],function(b,a){return b([a],{publishGlobal:true,cssRequirements:[{cssFile:"./css/_MenuBarItem.css"}],postCreate:function(){this.title=this.label;this.inherited(arguments)},})});

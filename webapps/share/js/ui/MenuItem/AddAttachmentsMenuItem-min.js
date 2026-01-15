@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuItem","../Dialog/AddAttachmentsDialog"],function(a,b,c){return a([b],{label:"Добавить",iconClass:"dijitCommonIcon icon-add btl-icon-16",parentNodeRef:null,endPostCreate:function(){this.attachmentsDialog=new c({parentNodeRef:this.parentNodeRef,contentType:this.contentType})},onClick:function(d){this.attachmentsDialog.show()},})});

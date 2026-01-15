@@ -1,0 +1,134 @@
+  .editPath {
+
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        vertical-align: middle;
+        background-size: 100%;
+        background-image: url(/share/res/components/form/img/edit_path.png);
+        background-repeat: no-repeat;
+
+        cursor: pointer;
+    }
+
+    .refresh_button {
+        display: inline-block;
+        height: 32px;
+        padding: 5px;
+        vertical-align: middle;
+        background-size: 100%;
+        float: right;
+        margin-left: 10px;
+        cursor: pointer;
+        background: transparent;
+
+    }
+
+    .icon-print {
+        display: inline-block;
+        height: 32px;
+        width: 32px;
+        vertical-align: middle;
+        background-size: 100%;
+        background-image: url(/share/res/components/form/img/print2.png)
+    }
+	
+	.negotiationNavigabeButton{
+		margin-top: 2px;		
+        font-size: 11.5px;
+		border: 1px solid #ccc;
+    	padding: 10px 5px 10px 40px;
+    	cursor: pointer;
+    	display: block;
+	}
+	
+	.negotiationNavigabeButton:HOVER{
+	    border-color: #999;
+	}
+
+    #StartNegotiation-button {
+        background: transparent url(/share/res/components/form/img/negotiation.png) 5px 50% no-repeat;       
+    }
+
+    #StartSigning-button {
+        background: transparent url(/share/res/components/form/img/signing-send.png) 5px 50% no-repeat;       
+    }
+
+    #TerminateNegotiation-button {
+        background: transparent url(/share/res/components/form/img/negotiation-cancel.png) 5px 50% no-repeat;        
+    }
+
+	 #Approve-button {
+        background: transparent url(/share/res/components/form/img/negotiation.png) 5px 3px no-repeat;     
+    }
+
+   
+
+    #ApproveWithComment-button {
+        background: transparent url(/share/res/components/form/img/negotiation-comment.png) 5px 3px no-repeat;
+    }
+
+
+    #Reject-button {
+        background: transparent url(/share/res/components/form/img/negotiation-cancel.png) 5px 3px no-repeat;
+    }
+    
+    
+    
+    
+    #signerDecision-Sign-button {
+        background: transparent url(/share/res/components/form/img/siginig.png) 5px 3px  no-repeat;
+
+    }   
+
+    #signerDecision-Reject-button {
+        background: transparent url(/share/res/components/form/img/siginig-cansel.png) 5px 3px  no-repeat;
+    }
+
+    .icon-emp {
+        display: block;
+        height: 22px;
+        padding-left: 20px;
+        background: transparent url(/share/res/components/form/img/emploee.png) 0 0px no-repeat;
+    }
+
+    .ygtvtn {
+        width: 0px;
+        background: none;
+    }
+
+    .ygtvln {
+        width: 0px;
+        background: none;
+    }
+
+    #share-header {
+        min-height: 0px;
+        margin: 0 -10px;
+    }
+
+    .form-container input[name="prop_btlwf_taskState"] {
+        clear: both;
+        width: 100%;
+    }
+
+    /* .yui-button {
+         width: 118px;
+     }*/
+
+    .ui-jqgrid-view {
+        z-index: 0 !important;
+    }
+
+    .fileItem, .fileVersion {
+        cursor: pointer;
+    }
+
+    .rootVersion {
+        font-weight: bold;
+        cursor: pointer;
+    }
+
+    .negotiation-tree {
+        border: 1px solid grey;
+    }

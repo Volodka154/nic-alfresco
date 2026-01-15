@@ -1,0 +1,53 @@
+.cert-list{
+    width: 100% !important;
+    resize: none;
+    border: 1px solid black;
+}
+.cert-info{
+    background-image: url("../img/cert.png");
+    border: 5px double #5a9251;
+    padding: 10px;
+    margin: 10px 0px 0px 0px;
+}
+.info_field {
+    margin: 0px;
+    color: #333;
+    padding: 5px 10px 5px 10px;
+    font-weight: normal;
+    font-size: 16px;
+}
+.visible_none{
+    display: none;
+}
+
+.info_msg {
+    margin: 0px;
+    color: #7a7c88;
+    padding: 10px 10px 10px 0px;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 30px;
+}
+.link-download{
+    cursor: pointer;
+    color: rgb(13, 136, 255)  !important;
+    font-style: italic;
+}
+.link-download:hover {
+    text-decoration: underline !important;
+}
+.loading {
+    height: 100%;
+    width: 100%;
+    background: #f2f2f2;;
+    opacity: 1;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    display: none;
+}
+.ecp-block-all {
+    margin-bottom: 10px;
+    border-bottom: solid 1px;
+    padding-bottom: 10px;
+}

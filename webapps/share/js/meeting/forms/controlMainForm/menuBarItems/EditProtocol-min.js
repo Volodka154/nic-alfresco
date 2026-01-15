@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../menuBarItems/_MenuBarItem","dojo/_base/lang"],function(a,b,c){return a([b],{label:"Изменить протокол",publishTopic:"ALF_EDIT_PROTOCOL",publishPayloadType:"PROCESS",publishGlobal:true})});

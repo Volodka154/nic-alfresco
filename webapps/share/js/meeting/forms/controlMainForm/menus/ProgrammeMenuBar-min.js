@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","../../../menus/_MenuBar","../menuBarItems/AddQuestion"],function(b,a){return b([a],{storeId:null,postCreate:function(){if(!this._disabled){this.widgets=[{name:"meeting/forms/controlMainForm/menuBarItems/AddQuestion",config:{storeId:this.storeId}}]}this.inherited(arguments)},})});

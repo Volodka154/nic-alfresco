@@ -1,0 +1,8 @@
+<webscript>
+	<shortname>Synchronization Employees</shortname>
+	<description>Synchronization Employees</description>
+	<url>/events/synchronization-employees</url>
+	<format default="json" />
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

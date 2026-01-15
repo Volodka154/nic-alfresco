@@ -1,0 +1,39 @@
+define(["dojo/_base/declare",
+        "alfresco/forms/controls/Select",
+        "meeting/utils/base",
+        "alfresco/core/CoreXhr",
+        "alfresco/core/ResizeMixin",
+        "dojo/_base/lang"],
+        function(declare, Select, utilBase,CoreXhr,ResizeMixin,lang){
+
+    return declare([Select, CoreXhr,ResizeMixin], {
+        label: "Ссылка на",
+        name: "prop_btl-link_docType",
+        additionalCssClasses:"width300",
+        optionsConfig: {
+            fixed: [
+                    {label:"Ссылка на:", selected: true, disabled: true}
+                    ,{value:"btl-project:projectDataType", label:"Проект"}
+                    ,{value:"btl-incomming:documentDataType", label:"Входящий"}
+                    ,{value:"btl-outgoing:documentDataType", label:"Исходящий"}
+                    ,{value:"btl-internal:documentDataType", label:"Внутренний"}
+                    ,{value:"0", label:"Резолюция по Входящему"}
+                    ,{value:"1", label:"Задание по исходящему"}
+                    ,{value:"2", label:"Резолюция по внутреннему"}
+                    ,{value:"3", label:"Задание по проекту"}
+                    ,{value:"4", label:"Инициативное задание"}
+                    ,{value:"5", label:"НТД"}
+                    ,{value:"6", label:"Дела проектов"}
+                    ,{value:"7", label:"ОРД"}
+                    ,{value:"8", label:"Задание по ОРД"}
+                    ,{value:"btl-meeting:meetingDataType", label:"Мероприятие"}
+             ],
+             fieldId: "LINK_OBJECT_TYPE_SELECT"
+        },
+
+        postMixInProperties: function () {
+            this.alfDisabled(this.value != "");
+            this.inherited(arguments);
+        },
+    });
+});

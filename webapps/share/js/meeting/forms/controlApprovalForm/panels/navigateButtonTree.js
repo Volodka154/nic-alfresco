@@ -1,0 +1,85 @@
+
+define(["dojo/_base/declare",
+    "meeting/forms/_DynamicForm",
+    "dojo/_base/lang"
+
+], function (declare, DynamicForm, lang) {
+
+    return declare([DynamicForm], {
+    	
+        postCreate: function () {
+        	
+        	this.widgets = [
+        	                
+							{
+								  name: "alfresco/layout/HorizontalWidgets",
+								  config: {
+									  style:"",
+									  
+									  onResize:function(){
+										  
+									  },
+									  
+								      widgets: [
+												{
+													name: "meeting/forms/controlApprovalForm/buttons/_Button",
+													id: "editNavigateButton",
+													widthPx: 118,
+													config:{
+														style:"width: 117px; margin: 0;",
+														label: "Редактировать",
+												        publishTopic: "EDIT_APPROVAL",
+												        publishGlobal: true,
+												        disabled:true												        
+													}
+												},
+												{
+													name: "meeting/forms/controlApprovalForm/buttons/_Button",
+													id: "upNavigateButton",
+													widthPx: 40,
+													config:{
+														style:"width: 40px; margin: 0;",
+														label: "&#9650;",
+												        publishTopic: "MOVE_UP_APPROVAL",
+												        publishGlobal: true,
+												        disabled:true
+													}
+												},
+												{
+													name: "meeting/forms/controlApprovalForm/buttons/_Button",
+													id: "downNavigateButton",
+													widthPx: 40,
+													config:{
+														style:"width: 40px; margin: 0;",
+														label: "&#9660;",
+												        publishTopic: "MOVE_DOWN_APPROVAL",
+												        publishGlobal: true,
+												        disabled:true
+													}
+												},
+												{
+													name: "meeting/forms/controlApprovalForm/buttons/_Button",
+													id: "deleteNavigateButton",
+													widthPx: 77,
+													config:{
+														style:"width: 77px; margin: 0;",
+														label: "Удалить",
+												        publishTopic: "DELETE_APPROVAL",
+												        publishGlobal: true,
+												        disabled:true
+													}
+												}
+								      ]
+								  }
+							}
+        	                
+        	                
+							  
+        	];
+        	
+            this.inherited(arguments);
+            
+        }
+        
+    });
+});

@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","alfresco/menus/AlfMenuBarItem","./_mixinExtensionBarItem"],function(b,a,c){return b([a,c],{})});

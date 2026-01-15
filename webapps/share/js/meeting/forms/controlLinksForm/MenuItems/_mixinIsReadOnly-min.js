@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dojo/topic","dojo/_base/lang"],function(b,a,c){return b(null,{postMixInProperties:function(){this.alfSubscribe(this.pubSubScope+"IS_READ_ONLY_ATTACHMENTS",c.hitch(this,this.isReadOnly),true);this.inherited(arguments)},isReadOnly:function(d){this.setVisibly(false)}})});

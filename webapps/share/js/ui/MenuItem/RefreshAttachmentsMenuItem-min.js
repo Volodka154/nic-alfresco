@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","./_MenuItem","dojo/topic"],function(b,c,a){return b([c],{label:"Обновить",iconClass:"dijitCommonIcon icon-refresh btl-icon-16",onClick:function(d){a.publish("refreshAttachmentsGrid")},})});

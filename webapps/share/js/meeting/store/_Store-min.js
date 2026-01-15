@@ -1,0 +1,1 @@
+define(["dojo/_base/declare","dijit/_WidgetBase","alfresco/core/Core","dijit/_TemplatedMixin","dojo/text!./templates/_store.html"],function(b,a,e,d,c){return b([a,e,d],{templateString:c,store:{}})});

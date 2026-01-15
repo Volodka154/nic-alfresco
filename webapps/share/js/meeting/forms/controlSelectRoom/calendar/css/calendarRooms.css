@@ -1,0 +1,25 @@
+.claro .dojoxCalendarEvent.selectCalendar .bg {
+  background-color: rgba(0, 49, 101, 0.95) !important
+}
+.claro .dojoxCalendarEvent.selectCalendar.Hovered .bg {
+  background-color: rgba(0, 49, 101, 0.95) !important
+}
+.claro .dojoxCalendarEvent.selectCalendar.Selected .bg {
+  background-color: rgba(0, 18, 68, 0.95) !important;
+}
+
+.claro .dojoxCalendarEvent.selectCalendar.Selected .startTime  {
+	background-color: #002b6c !important;
+}
+
+.claro .dojoxCalendarEvent.selectCalendar.Hovered .startTime {
+  background-color: #002b6c !important;
+}
+
+.claro .dojoxCalendarEvent.selectCalendar .startTime {
+  background-color: #002b6c !important;
+}
+
+.claro .dojoxCalendarColumnView.secondarySheet .dojoxCalendarVScrollBar{
+	display: none;
+}
