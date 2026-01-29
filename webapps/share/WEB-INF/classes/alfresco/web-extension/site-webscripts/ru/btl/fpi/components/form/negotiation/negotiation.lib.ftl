@@ -400,7 +400,7 @@
                     result += "<td>" + results[i].state + "</td>";
                     result += "<td>" + results[i].cycle + "</td>";
                     result += "<td>" + results[i].file + "</td>";
-                    result += "<td>" + results[i].negotiatorComment + "</td>";
+                    result += "<td style='max-width: 250px; overflow-wrap: break-word;'>" + results[i].negotiatorComment + "</td>";
                     result += "</tr>";
                 }
                 return result;
