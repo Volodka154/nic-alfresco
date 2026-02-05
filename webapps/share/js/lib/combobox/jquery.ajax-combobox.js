@@ -1495,7 +1495,7 @@ define(
                     // コンボボックスの種類によって検索文字列の形式を変える
                     if (self.option.plugin_type != 'textarea') {
                         var q_word = (self.prop.is_suggest) ? $.trim($(self.elem.combo_input).val()) : '';
-                        if (q_word.length < 3 && self.prop.is_suggest) {
+                        if (q_word.length < 1 && self.prop.is_suggest) {
                             self._hideResults(self);
                             return;
                         }
